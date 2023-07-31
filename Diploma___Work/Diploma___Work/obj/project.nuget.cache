@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "+arA/RvAJY94yNovHSLcw9l1zU8HJc/eWwxgE7Xa6nJSz88RiuufyqlDlkPKH1J8yo8MxqrSsAjfwJ+N3YJ2QQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Дима\\source\\repos\\DiplomaWork\\Diploma___Work\\Diploma___Work\\Diploma___Work.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Дима\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.19\\microsoft.windowsdesktop.app.ref.6.0.19.nupkg.sha512",
+    "C:\\Users\\Дима\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.19\\microsoft.netcore.app.ref.6.0.19.nupkg.sha512",
+    "C:\\Users\\Дима\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.19\\microsoft.aspnetcore.app.ref.6.0.19.nupkg.sha512",
+    "C:\\Users\\Дима\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.19\\microsoft.netcore.app.host.win-x64.6.0.19.nupkg.sha512"
+  ],
+  "logs": []
+}
