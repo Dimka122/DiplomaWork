@@ -2,6 +2,11 @@
 {
     public class Repository
     {
-        private
+        private ApplicationDbContext context=new ApplicationDbContext();
+
+        public IEnumerable<Sushi> Sushis
+        {
+            get { return context.Sushi; }
+        }
     }
 }
