@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using SushiStore.Interfaces;
 using SushiStore.Models;
 using System.Diagnostics;
 
@@ -6,27 +7,22 @@ namespace SushiStore.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly IProduct _products;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(IProduct products)
         {
-            _logger = logger;
+            _products = products;
         }
-
+        [HttpGet]
         public IActionResult Index()
         {
-            return View();
+            return View(_products.GetAllProducts());
         }
-
-        public IActionResult Privacy()
+        [HttpPost]
+        public IActionResult AddProduct(Product product)
         {
-            return View();
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            _products.AddProduct(product);
+            return RedirectToAction(nameof(Index));
         }
     }
 }

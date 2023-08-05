@@ -8,4 +8,3 @@ namespace SushiStore.Interfaces
         void AddProduct(Product product);
     }
 }
-.
