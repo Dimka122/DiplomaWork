@@ -5,20 +5,22 @@ namespace SushiStore.Repository
 {
     public class ProductRepository : IProduct
     {
-        private List<Product> products;
-        public ProductRepository()
+        private ApplicationContext _context;
+
+        public ProductRepository(ApplicationContext context)
         {
-            products = new List<Product>();
+            _context = context;
         }
 
         public void AddProduct(Product product)
         {
-            products.Add(product);
+            _context.Products.Add(product);
+            _context.SaveChanges();
         }
 
         public IEnumerable<Product> GetAllProducts()
         {
-            return products;
+            return _context.Products;
         }
     }
 }

@@ -8,7 +8,7 @@
     <div class="row">
         <div class="col font-weight-bold">Название</div>
         <div class="col font-weight-bold">Категория</div>
-        <div class="col font-weight-bold">Цена со скидкой</div>
+        <div class="col font-weight-bold">Описание</div>
         <div class="col font-weight-bold">Розничная цена</div>
         <div class="col"></div>
     </div>
@@ -21,7 +21,7 @@
                 <input name="Category" class="form-control" required />
             </div>
             <div class="col">
-                <input name="PurchasePrice" class="form-control" required />
+                <input name="Detail" class="form-control" required />
             </div>
             <div class="col">
                 <input name="RetailPrice" class="form-control" required />
@@ -44,7 +44,7 @@
             <div class="row р-2">
                 <div class="col">@product.Name</div>
                 <div class="col">@product.Category</div>
-                <div class="col text-right">@product.PurchasePrice</div>
+                <div class="col text-right">@product.Detail</div>
                 <div class="col text-right">@product.RetailPrice</div>
                 <div class="col"></div>
             </div>

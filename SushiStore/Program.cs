@@ -1,11 +1,23 @@
 using SushiStore.Interfaces;
+using SushiStore.Models;
 using SushiStore.Repository;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddSingleton<IProduct, ProductRepository>();
+//builder.Services.AddSingleton<IProduct, ProductRepository>();
+
+builder.Services.AddTransient<IProduct, ProductRepository>();
+
+IConfigurationRoot _confString = new ConfigurationBuilder().
+    SetBasePath(AppDomain.CurrentDomain.BaseDirectory).AddJsonFile("appsettings.json").Build();
+
+builder.Services.AddDbContext<ApplicationContext>(options =>
+               options.UseSqlServer(_confString.GetConnectionString("DefaultConnection")));
+
+
 
 var app = builder.Build();
 
