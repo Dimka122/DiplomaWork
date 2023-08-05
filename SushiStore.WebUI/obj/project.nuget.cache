@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "jv4XHt0GQ6sGB2OqNSoI9fEQxFLpqe0l7Ya2K92UzvuMkxMLiEhE74azEq9oGPMbcqOYZrf7FzhQYhNmfOY9YA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Дима\\source\\repos\\DiplomaWork\\SushiStore.WebUI\\SushiStore.WebUI.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Дима\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.19\\microsoft.windowsdesktop.app.ref.6.0.19.nupkg.sha512",
+    "C:\\Users\\Дима\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.19\\microsoft.netcore.app.ref.6.0.19.nupkg.sha512",
+    "C:\\Users\\Дима\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.19\\microsoft.aspnetcore.app.ref.6.0.19.nupkg.sha512",
+    "C:\\Users\\Дима\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.19\\microsoft.netcore.app.host.win-x64.6.0.19.nupkg.sha512"
+  ],
+  "logs": []
+}
