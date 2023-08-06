@@ -6,5 +6,7 @@ namespace SushiStore.Interfaces
     {
         IEnumerable<Product> GetAllProducts();
         void AddProduct(Product product);
+        Product GetProduct(int id);
+        void UpdateProduct(Product product);
     }
 }

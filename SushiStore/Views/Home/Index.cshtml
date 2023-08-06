@@ -1,7 +1,7 @@
 ﻿@{
     ViewData["Title"] = "Все товары";
 }
-@model IEnumerable<Product>
+@model IQueryable<Product>
 
 <h3 class="p-2 bg-bg-primary text-white text-center">Товары</h3>
 <div class="container">
@@ -46,7 +46,11 @@
                 <div class="col">@product.Category</div>
                 <div class="col text-right">@product.Detail</div>
                 <div class="col text-right">@product.RetailPrice</div>
-                <div class="col"></div>
+                <div class="col">
+                    <a asp-action="UpdateProduct" asp-route-id="@product.Id" class=" btn btn-outline-primary">
+                        Изменить
+                    </a>
+                </div>
             </div>
         }
     }
