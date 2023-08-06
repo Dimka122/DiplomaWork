@@ -8,5 +8,7 @@ namespace SushiStore.Interfaces
         void AddProduct(Product product);
         Product GetProduct(int id);
         void UpdateProduct(Product product);
+        void UpdateAll(Product[] products);
+        void DeleteProduct(Product product);
     }
 }
