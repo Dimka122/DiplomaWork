@@ -1,4 +1,5 @@
-﻿using SushiStore.Interfaces;
+﻿using Microsoft.EntityFrameworkCore;
+using SushiStore.Interfaces;
 using SushiStore.Models;
 
 namespace SushiStore.Repository
@@ -20,25 +21,28 @@ namespace SushiStore.Repository
 
         public IEnumerable<Product> GetAllProducts()
         {
-            return _context.Products;
+            return _context.Products.Include(e => e.Category);
         }
+
         public Product GetProduct(int id)
         {
-            return _context.Products.Find(id);
+            return _context.Products.Include(e => e.Category).FirstOrDefault(e => e.Id == id);
         }
 
         public void UpdateProduct(Product product)
         {
-            Product product2 = GetProduct(product.Id);
+            Product product2 = _context.Products.Find(product.Id);
             product2.Name = product.Name;
-            product2.Category = product.Category;
+            //product2.Category = product.Category;
             product2.RetailPrice = product.RetailPrice;
             product2.Detail = product.Detail;
-            //_context.Products.Update(product);
+            product2.CategoryId = product.CategoryId;
             _context.SaveChanges();
         }
+
         public void UpdateAll(Product[] products)
         {
+            // _context.Products.UpdateRange(products);
             Dictionary<int, Product> data = products.ToDictionary(e => e.Id);
             IEnumerable<Product> baseline = _context.Products.Where(e => data.Keys.Contains(e.Id));
             foreach (Product product in baseline)
@@ -51,6 +55,7 @@ namespace SushiStore.Repository
             }
             _context.SaveChanges();
         }
+
         public void DeleteProduct(Product product)
         {
             _context.Products.Remove(product);

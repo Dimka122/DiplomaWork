@@ -8,10 +8,12 @@ namespace SushiStore.Controllers
     public class HomeController : Controller
     {
         private readonly IProduct _products;
+        private readonly ICategory _categories;
 
-        public HomeController(IProduct products)
+        public HomeController(IProduct products, ICategory categories)
         {
             _products = products;
+            _categories = categories;
         }
         [HttpGet]
         public IActionResult Index()
@@ -21,6 +23,7 @@ namespace SushiStore.Controllers
         [HttpGet]
         public IActionResult UpdateProduct(int id)
         {
+            ViewBag.Categories = _categories.GetAllCategories();
             return View(id == 0 ? new Product() : _products.GetProduct(id));
         }
         [HttpPost]
