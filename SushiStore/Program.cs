@@ -21,6 +21,7 @@ builder.Services.AddDbContext<ApplicationContext>(options =>
                options.UseSqlServer(_confString.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddTransient<ICategory, CategoryRepository>();
+builder.Services.AddTransient<IOrder, OrderRepository>();
 
 var app = builder.Build();
 
