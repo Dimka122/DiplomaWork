@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SushiStore.Interfaces;
 using SushiStore.Models;
+using SushiStore.Models.Pages;
 using System.Diagnostics;
 
 namespace SushiStore.Controllers
@@ -15,11 +16,12 @@ namespace SushiStore.Controllers
             _products = products;
             _categories = categories;
         }
-        [HttpGet]
+        /*[HttpGet]
+        
         public IActionResult Index()
         {
             return View(_products.GetAllProducts());
-        }
+        }*/
         [HttpGet]
         public IActionResult UpdateProduct(int id)
         {
@@ -44,6 +46,11 @@ namespace SushiStore.Controllers
         {
             _products.DeleteProduct(product);
             return RedirectToAction(nameof(Index));
+        }
+        [HttpGet]
+        public IActionResult Index(QueryOptions options)
+        {
+            return View(_products.GetProducts(options));
         }
     }
 }

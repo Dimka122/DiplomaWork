@@ -1,9 +1,22 @@
 ﻿@{
     ViewData["Title"] = "Все товары";
 }
-@model IQueryable<Product>
+@model IEnumerable<Product>
 
 <h3 class="p-2 bg-primary text-white text-center">Товары</h3>
+
+<div class="text-center">
+    @Html.Partial("Pages", Model)
+
+    @{
+        ViewBag.searches = new string[] { "Name", "Category.Name" };
+        ViewBag.sorts = new string[] { "Name", "Category.Name", "Detail", "RetailPrice" };
+    }
+    @Html.Partial("PageOptions", Model)
+
+</div>
+
+
 <div class="container">
 
     <div class="row">

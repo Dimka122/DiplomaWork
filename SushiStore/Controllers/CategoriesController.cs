@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SushiStore.Interfaces;
 using SushiStore.Models;
+using SushiStore.Models.Pages;
 
 namespace SushiStore.Controllers
 {
@@ -38,6 +39,10 @@ namespace SushiStore.Controllers
         {
             _categories.DeleteCategory(category);
             return RedirectToAction(nameof(Index));
+        }
+        public IActionResult Index(QueryOptions options)
+        {
+            return View(_categories.GetCategories(options));
         }
     }
 }

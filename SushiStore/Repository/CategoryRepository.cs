@@ -1,11 +1,16 @@
 ﻿using SushiStore.Interfaces;
 using SushiStore.Models;
+using SushiStore.Models.Pages;
 
 namespace SushiStore.Repository
 {
     public class CategoryRepository:ICategory
     {
         private ApplicationContext _context;
+        public PagedList<Category> GetCategories(QueryOptions options)
+        {
+            return new PagedList<Category>(_context.Categories, options);
+        }
 
         public CategoryRepository(ApplicationContext context)
         {
@@ -34,6 +39,7 @@ namespace SushiStore.Repository
             _context.Categories.Remove(category);
             _context.SaveChanges();
         }
+        
     }
 }
 

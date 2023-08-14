@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SushiStore.Interfaces;
 using SushiStore.Models;
+using SushiStore.Models.Pages;
 
 namespace SushiStore.Repository
 {
@@ -60,6 +61,10 @@ namespace SushiStore.Repository
         {
             _context.Products.Remove(product);
             _context.SaveChanges();
+        }
+        public PagedList<Product> GetProducts(QueryOptions options)
+        {
+            return new PagedList<Product>(_context.Products.Include(e => e.Category), options);
         }
     }
 }

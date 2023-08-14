@@ -1,4 +1,6 @@
-﻿namespace SushiStore.Models
+﻿using SushiStore.Models.Pages;
+
+namespace SushiStore.Models
 {
     public class Product
     {
