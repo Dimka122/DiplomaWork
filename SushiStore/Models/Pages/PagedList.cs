@@ -1,4 +1,5 @@
-﻿using System.Linq.Expressions;
+﻿using System.Diagnostics;
+using System.Linq.Expressions;
 using SushiStore.Models;
 
 namespace SushiStore.Models.Pages
@@ -22,6 +23,14 @@ namespace SushiStore.Models.Pages
                     query = Search(query, options.SearchPropertyName, options.SearchTerm);
                 }
             }
+
+            Stopwatch stopwatch = Stopwatch.StartNew();
+            Console.Clear();
+
+            TotalPages = query.Count() / PageSize;
+            AddRange(query.Skip((CurrentPage - 1) * PageSize).Take(PageSize));
+
+            Console.WriteLine($"Время выполнения: {stopwatch.ElapsedMilliseconds} миллисекунд.");
 
             TotalPages = query.Count() / PageSize;
             AddRange(query.Skip((CurrentPage - 1) * PageSize).Take(PageSize));
