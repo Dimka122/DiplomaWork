@@ -5,11 +5,10 @@ namespace SushiStore.Interfaces
 {
     public interface IProduct
     {
-        PagedList<Product> GetProducts(QueryOptions options);
+        PagedList<Product> GetProducts(QueryOptions options, int category = 0);
         IEnumerable<Product> GetAllProducts();
-
-        void AddProduct(Product product);
         Product GetProduct(int id);
+        void AddProduct(Product product);
         void UpdateProduct(Product product);
         void UpdateAll(Product[] products);
         void DeleteProduct(Product product);

@@ -62,9 +62,14 @@ namespace SushiStore.Repository
             _context.Products.Remove(product);
             _context.SaveChanges();
         }
-        public PagedList<Product> GetProducts(QueryOptions options)
+        public PagedList<Product> GetProducts(QueryOptions options, int category = 0)
         {
-            return new PagedList<Product>(_context.Products.Include(e => e.Category), options);
+            IQueryable<Product> products = _context.Products.Include(e => e.Category);
+            if (category != 0)
+            {
+                products = products.Where(e => e.CategoryId == category);
+            }
+            return new PagedList<Product>(products, options);
         }
     }
 }

@@ -23,7 +23,17 @@ builder.Services.AddDbContext<ApplicationContext>(options =>
 builder.Services.AddTransient<ICategory, CategoryRepository>();
 builder.Services.AddTransient<IOrder, OrderRepository>();
 
+builder.Services.AddSession(options =>
+{
+    options.Cookie.Name = "SushiStore.Session";
+    options.IdleTimeout = System.TimeSpan.FromHours(48);
+    options.Cookie.HttpOnly = false;
+});
+
 var app = builder.Build();
+
+app.UseSession();
+
 
 if (!app.Environment.IsDevelopment())
 {
