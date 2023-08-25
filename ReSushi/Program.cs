@@ -1,6 +1,19 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using ReSushi.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+IConfigurationRoot _confString = new ConfigurationBuilder().
+    SetBasePath(AppDomain.CurrentDomain.BaseDirectory).AddJsonFile("appsettings.json").Build();
+
+builder.Services.AddDbContext<ApplicationContext>(options =>
+               options.UseSqlServer(_confString.GetConnectionString("DefaultConnection")));
+
+
+
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
