@@ -39,6 +39,10 @@ namespace ReSushi.Repository
             _context.Categories.Remove(category);
             _context.SaveChanges();
         }
+        public Category GetCategory(int id) 
+        {
+            return _context.Categories.FirstOrDefault(c => c.Id == id);
+        }
 
     }
 

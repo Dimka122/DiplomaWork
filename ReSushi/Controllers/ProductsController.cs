@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ReSushi.interfaces;
-using ReSushi.Models;
 using ReSushi.Models.Pages;
+using ReSushi.Models;
 
-namespace ReSushi.Controllers
+namespace SushiStore.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
@@ -24,19 +24,22 @@ namespace ReSushi.Controllers
             return Ok(_products.GetAllProducts());
         }
 
-        [HttpGet("Get/{id}")]
-        public IActionResult GetProduct(int id)
+        [HttpGet("GetCategories")]
+        public IActionResult GetCategories()
         {
-            var product = _products.GetProduct(id);
-            if (product == null)
-            {
-                return NotFound();
-            }
-            return Ok(product);
+            return Ok(_categories.GetAllCategories());
         }
 
-        [HttpPost("CreateOrUpdate")]
-        public IActionResult CreateOrUpdateProduct(Product product)
+        [HttpGet("Update/{id}")]
+        public IActionResult UpdateProduct(int id)
+        {
+            var product = id == 0 ? new Product() : _products.GetProduct(id);
+            var categories = _categories.GetAllCategories();
+            return Ok(new { Product = product, Categories = categories });
+        }
+
+        [HttpPost("AddOrUpdate")]
+        public IActionResult AddOrUpdateProduct(Product product)
         {
             if (product.Id == 0)
             {
@@ -57,8 +60,9 @@ namespace ReSushi.Controllers
             {
                 return NotFound();
             }
+
             _products.DeleteProduct(product);
-            return NoContent();
+            return Ok();
         }
 
         [HttpGet("GetProducts")]
@@ -68,3 +72,4 @@ namespace ReSushi.Controllers
         }
     }
 }
+
