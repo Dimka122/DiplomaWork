@@ -35,6 +35,7 @@ namespace ReSushi.Repository
             Product product2 = _context.Products.Find(product.Id);
             product2.Name = product.Name;
             //product2.Category = product.Category;
+            product2.Massa= product.Massa;
             product2.RetailPrice = product.RetailPrice;
             product2.Detail = product.Detail;
             product2.CategoryId = product.CategoryId;
@@ -51,6 +52,7 @@ namespace ReSushi.Repository
                 Product requestProduct = data[product.Id];
                 product.Name = requestProduct.Name;
                 product.Category = requestProduct.Category;
+                product.Massa=requestProduct.Massa;
                 product.RetailPrice = requestProduct.RetailPrice;
                 product.Detail = requestProduct.Detail;
             }
