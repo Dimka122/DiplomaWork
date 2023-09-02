@@ -48,6 +48,7 @@ function ProductForm() {
           placeholder="Retail Price"
         />
         <button type="submit">Save</button>
+
       </form>
     </div>
   );

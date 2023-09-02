@@ -1,8 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using ReSushi.interfaces;
 using ReSushi.Models;
-using ReSushi.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,14 +9,18 @@ var builder = WebApplication.CreateBuilder(args);
 IConfigurationRoot _confString = new ConfigurationBuilder().
     SetBasePath(AppDomain.CurrentDomain.BaseDirectory).AddJsonFile("appsettings.json").Build();
 
-builder.Services.AddDbContext<ApplicationContext>(options =>
+builder.Services.AddDbContext<EFDataContext>(options =>
                options.UseSqlServer(_confString.GetConnectionString("DefaultConnection")));
 
-builder.Services.AddTransient<IProduct, ProductRepository>();
-builder.Services.AddTransient<ICategory, CategoryRepository>();
-builder.Services.AddTransient<IOrder, OrderRepository>();
 
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name:"client",
+        policy=>policy.WithOrigins("http://localhost:3000")
+               .AllowAnyMethod()
+               .AllowAnyHeader());
+});
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -33,6 +35,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseCors("client");
 
 app.UseHttpsRedirection();
 
