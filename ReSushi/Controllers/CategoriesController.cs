@@ -1,7 +1,7 @@
 ﻿namespace ReSushi.Controllers
 {
     using Microsoft.AspNetCore.Mvc;
-    
+    using ReSushi.Models;
 
     namespace SushiStore.Controllers
     {
@@ -9,7 +9,13 @@
         [Route("api/[controller]")]
         public class CategoriesController : ControllerBase
         {
+            public readonly EFDataContext _db;
+            public CategoriesController(EFDataContext db)
+            {
+                this._db = db;
+            }
             
+
         }
     }
 
