@@ -1,11 +1,18 @@
 C:\Users\Дима\source\repos\DiplomaWork\ReSushi\bin\Debug\net6.0\appsettings.Development.json
 C:\Users\Дима\source\repos\DiplomaWork\ReSushi\bin\Debug\net6.0\appsettings.json
+C:\Users\Дима\source\repos\DiplomaWork\ReSushi\bin\Debug\net6.0\ClientApp\client\package-lock.json
+C:\Users\Дима\source\repos\DiplomaWork\ReSushi\bin\Debug\net6.0\ClientApp\client\package.json
+C:\Users\Дима\source\repos\DiplomaWork\ReSushi\bin\Debug\net6.0\ClientApp\client\public\manifest.json
 C:\Users\Дима\source\repos\DiplomaWork\ReSushi\bin\Debug\net6.0\ReSushi.exe
 C:\Users\Дима\source\repos\DiplomaWork\ReSushi\bin\Debug\net6.0\ReSushi.deps.json
 C:\Users\Дима\source\repos\DiplomaWork\ReSushi\bin\Debug\net6.0\ReSushi.runtimeconfig.json
 C:\Users\Дима\source\repos\DiplomaWork\ReSushi\bin\Debug\net6.0\ReSushi.dll
 C:\Users\Дима\source\repos\DiplomaWork\ReSushi\bin\Debug\net6.0\ReSushi.pdb
 C:\Users\Дима\source\repos\DiplomaWork\ReSushi\bin\Debug\net6.0\Humanizer.dll
+C:\Users\Дима\source\repos\DiplomaWork\ReSushi\bin\Debug\net6.0\System.Web.Cors.dll
+C:\Users\Дима\source\repos\DiplomaWork\ReSushi\bin\Debug\net6.0\System.Net.Http.Formatting.dll
+C:\Users\Дима\source\repos\DiplomaWork\ReSushi\bin\Debug\net6.0\System.Web.Http.dll
+C:\Users\Дима\source\repos\DiplomaWork\ReSushi\bin\Debug\net6.0\System.Web.Http.Cors.dll
 C:\Users\Дима\source\repos\DiplomaWork\ReSushi\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
 C:\Users\Дима\source\repos\DiplomaWork\ReSushi\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
 C:\Users\Дима\source\repos\DiplomaWork\ReSushi\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
@@ -22,6 +29,8 @@ C:\Users\Дима\source\repos\DiplomaWork\ReSushi\bin\Debug\net6.0\Microsoft.Id
 C:\Users\Дима\source\repos\DiplomaWork\ReSushi\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\Дима\source\repos\DiplomaWork\ReSushi\bin\Debug\net6.0\Microsoft.OpenApi.dll
 C:\Users\Дима\source\repos\DiplomaWork\ReSushi\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\Дима\source\repos\DiplomaWork\ReSushi\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\Дима\source\repos\DiplomaWork\ReSushi\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
 C:\Users\Дима\source\repos\DiplomaWork\ReSushi\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\Дима\source\repos\DiplomaWork\ReSushi\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\Дима\source\repos\DiplomaWork\ReSushi\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -65,6 +74,3 @@ C:\Users\Дима\source\repos\DiplomaWork\ReSushi\obj\Debug\net6.0\refint\ReSus
 C:\Users\Дима\source\repos\DiplomaWork\ReSushi\obj\Debug\net6.0\ReSushi.pdb
 C:\Users\Дима\source\repos\DiplomaWork\ReSushi\obj\Debug\net6.0\ReSushi.genruntimeconfig.cache
 C:\Users\Дима\source\repos\DiplomaWork\ReSushi\obj\Debug\net6.0\ref\ReSushi.dll
-C:\Users\Дима\source\repos\DiplomaWork\ReSushi\bin\Debug\net6.0\ClientApp\client\package-lock.json
-C:\Users\Дима\source\repos\DiplomaWork\ReSushi\bin\Debug\net6.0\ClientApp\client\package.json
-C:\Users\Дима\source\repos\DiplomaWork\ReSushi\bin\Debug\net6.0\ClientApp\client\public\manifest.json

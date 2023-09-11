@@ -14,18 +14,96 @@ namespace SushiStore.Controllers
             this._db = db;
         }
         [HttpGet]
-        public async Task<IActionResult> Get()
+        public IEnumerable<Product> Get()
+
         {
-            var products = await _db.Product.ToListAsync();
-            return Ok(products);
+            var products = _db.Products.Select(s => new Product
+            {
+                idProduct = s.idProduct,
+                Name = s.Name,
+                Price = s.Price,
+                Detail = s.Detail,
+                ImageUrl=s.ImageUrl,    
+                idCategory = s.idCategory,
+                Category = _db.Categories.Where(a => a.idCategory == s.idCategory).FirstOrDefault()
+            }).ToList();
+            return products;
+
+            //var product=await _db.Products.ToListAsync();
+            //return Ok(product);
         }
+
+        // GET api/<ProductsController>/5
+        [HttpGet("{id}")]
+        public Product Get(int id)
+        {
+            var products = _db.Products.Select(s => new Product
+            {
+                idProduct = s.idProduct,
+                Name = s.Name,
+                Price = s.Price,
+                Detail = s.Detail,
+                ImageUrl=s.ImageUrl,
+                idCategory = s.idCategory,
+                Category = _db.Categories.Where(a => a.idCategory == s.idCategory).FirstOrDefault()
+            }).Where(a => a.idProduct == id).FirstOrDefault();
+            return products;
+        }
+
+        // POST api/<ProductsController>
         [HttpPost]
-        public async Task<IActionResult> Post(Product newProduct)
+        public async Task<IActionResult> Post([FromBody] FormProductView _product)
         {
-           _db.Product.Add(newProduct);
+
+            var product = new Product()
+            {
+                Name = _product.Name,
+                Price = _product.Price,
+                Detail = _product.Detail,
+                ImageUrl = _product.ImageUrl,
+                Category = _db.Categories.Find(_product.idCategory)
+            };
+            _db.Products.Add(product);
             await _db.SaveChangesAsync();
-            return Ok(newProduct);
+            if (product.idProduct > 0)
+            {
+                return Ok(1);
+            }
+            return Ok(0);
+
+
+
         }
+
+        // PUT api/<ProductsController>/5
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Put(int id, [FromBody] FormProductView _user)
+        {
+            var product = _db.Products.Find(id);
+             product.Name = _user.Name;
+             product.Price = _user.Price;
+             product.Detail = _user.Detail;
+             product.ImageUrl = _user.ImageUrl;
+             product.Category = _db.Categories.Find(_user.idCategory);
+             await _db.SaveChangesAsync();
+             return Ok(1);
+
+            //_db.Products.Update(ProductToUpdate);
+           // await _db.SaveChangesAsync();
+           // return Ok(ProductToUpdate);
+
+        }
+
+        // DELETE api/<ProductsController>/5
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var product = _db.Products.Find(id);
+            _db.Products.Remove(product);
+            await _db.SaveChangesAsync();
+            return Ok(1);
+        }
+
 
 
     }

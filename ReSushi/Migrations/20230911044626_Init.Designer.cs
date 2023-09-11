@@ -11,8 +11,8 @@ using ReSushi.Models;
 namespace ReSushi.Migrations
 {
     [DbContext(typeof(EFDataContext))]
-    [Migration("20230903162848_Ikkk")]
-    partial class Ikkk
+    [Migration("20230911044626_Init")]
+    partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

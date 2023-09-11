@@ -4,7 +4,7 @@
 
 namespace ReSushi.Migrations
 {
-    public partial class Inita : Migration
+    public partial class Init : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -29,8 +29,9 @@ namespace ReSushi.Migrations
                     idProduct = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Sostav = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Price = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Detail = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     idCategory = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
