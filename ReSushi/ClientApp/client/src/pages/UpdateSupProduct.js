@@ -2,35 +2,35 @@ import Button from "react-bootstrap/Button";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
  
-function UpdateSuperVillain() {
-  const superVillainName = useRef("");
-  const franchise = useRef("");
-  const powers = useRef("");
+function UpdateSupProduct() {
+  const Name = useRef("");
+  const price = useRef("");
+  const detail = useRef("");
   const imgUrl = useRef("");
  
   const navigate = useNavigate();
- 
+
   const { id } = useParams();
- 
+
   useEffect(() => {
-    axios.get(`https://localhost:7273/SuperVillain/${id}`).then((response) => {
-      superVillainName.current.value = response.data.villainName;
-      franchise.current.value = response.data.franchise;
-      powers.current.value = response.data.powers;
+    axios.get(`https://localhost:7051/Products/${id}`).then((response) => {
+      Name.current.value = response.data.Name;
+      price.current.value = response.data.price;
+      detail.current.value = response.data.detail;
       imgUrl.current.value = response.data.imageUrl;
     });
   }, []);
  
-  function updateVillainHandler() {
+  function addUpdateProductHandler() {
     var payload = {
-      villainName: superVillainName.current.value,
-      powers: powers.current.value,
-      franchise: franchise.current.value,
+      Name: Name.current.value,
+      price: price.current.value,
+      detail: detail.current.value,
       imageUrl: imgUrl.current.value,
-      id: id,
     };
+ 
     axios
-      .put(`https://localhost:7273/SuperVillain/`, payload)
+      .post("https://localhost:7051/api/Products/", payload)
       .then((response) => {
         navigate("/");
       });
@@ -38,29 +38,29 @@ function UpdateSuperVillain() {
  
   return (
     <>
-      <legend>Update SuperVilian</legend>
+      <legend>Update Products Character</legend>
       <form>
-        <Form.Group className="mb-3" controlId="formSuperVillainName">
-          <Form.Label>Super Villain Name</Form.Label>
-          <Form.Control type="text" ref={superVillainName} />
+        <Form.Group className="mb-3" controlId="formProductName">
+          <Form.Label>Product Name</Form.Label>
+          <Form.Control type="text" ref={Name} />
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formFranchise">
-          <Form.Label>Franchise</Form.Label>
-          <Form.Control type="text" ref={franchise} />
+        <Form.Group className="mb-3" controlId="formprice">
+          <Form.Label>price</Form.Label>
+          <Form.Control type="text" ref={price} />
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formPowers">
-          <Form.Label>Powers</Form.Label>
-          <Form.Control as="textarea" rows={3} ref={powers} />
+        <Form.Group className="mb-3" controlId="formdetail">
+          <Form.Label>detail</Form.Label>
+          <Form.Control as="textarea" rows={3} ref={detail} />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formImgUrl">
           <Form.Label>Image URL</Form.Label>
           <Form.Control type="text" ref={imgUrl} />
         </Form.Group>
       </form>
-      <Button variant="primary" type="button" onClick={updateVillainHandler}>
+      <Button variant="primary" type="button" onClick={addUpdateProductHandler}>
         Submit
       </Button>
     </>
   );
 }
-export default UpdateSuperV;
+export default UpdateSupProduct;
