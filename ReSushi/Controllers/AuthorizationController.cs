@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using ReSushi.Models;
@@ -8,10 +9,10 @@ using System.Text;
 
 namespace ReSushi.Controllers
 {
-    public class AuthorizationController
+    [ApiController]
+    [Route("api/[controller]")]
+    public class AuthorizationController:ControllerBase
     {
-        private readonly IConfiguration _configuration;
-
         private AuthorizationResponse GenerateAuthorizationToken(string userId, string userName)
         {
             var now = DateTime.UtcNow;
@@ -49,5 +50,47 @@ namespace ReSushi.Controllers
 
             return resp;
         }
+        private readonly UserManager<IdentityUser> _userManager;
+        private readonly SignInManager<IdentityUser> _signInManager;
+        private readonly IUserStore<IdentityUser> _userStore;
+        private readonly IUserEmailStore<IdentityUser> _emailStore;
+        private readonly IConfiguration _configuration;
+
+        public AuthorizationController(UserManager<IdentityUser> userManager,
+            IConfiguration configuration,
+            SignInManager<IdentityUser> signInManager,
+            IUserStore<IdentityUser> userStore)
+        {
+            _userManager = userManager;
+            _configuration = configuration;
+            _signInManager = signInManager;
+            _emailStore = (IUserEmailStore<IdentityUser>)userStore;
+            _userStore = userStore;
+        }
+
+        [HttpPost("authorization/token")]
+        public async Task<IActionResult> GetTokenAsync([FromBody] GetTokenRequest request)
+        {
+            var user = await _userManager.FindByNameAsync(request.UserName);
+
+            if (user == null)
+            {
+                //401 or 404
+                return Unauthorized();
+            }
+
+            var passwordValid = await _userManager.CheckPasswordAsync(user, request.Password);
+
+            if (!passwordValid)
+            {
+                //401 or 400
+                return Unauthorized();
+            }
+
+            var resp = GenerateAuthorizationToken(user.Id, user.UserName);
+
+            return Ok(resp);
+        }
+
     }
 }
