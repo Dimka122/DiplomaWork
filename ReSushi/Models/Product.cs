@@ -6,13 +6,12 @@ namespace ReSushi.Models
     {
         public int idProduct { get; set; }
         public string Name { get; set; }
-        public string Price { get; set; }
+        public string Category { get; set; }
         public string Detail { get; set; }
-        public string? ImageUrl { get; set; }
+        public DateTime DOJ { get; set; }
 
 
-        public int idCategory { get; set; }
-        public Category Category { get; set; }
+        
     }
 
 }

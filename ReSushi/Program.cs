@@ -1,10 +1,15 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.FileProviders;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using ReSushi;
 using ReSushi.Models;
+using ReSushi.Repository;
+using Swashbuckle.AspNetCore.SwaggerUI;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -18,7 +23,14 @@ builder.Services.AddDbContext<EFDataContext>(options =>
                options.UseSqlServer(_confString.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
-    .AddEntityFrameworkStores<EFDataContext>();
+.AddEntityFrameworkStores<EFDataContext>();
+
+builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+builder.Services.AddScoped<IProductRepository, ProductRepository>();
+
+//builder.Services.AddIdentity<IdentityUser, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = true)
+//.AddEntityFrameworkStores<EFDataContext>();
+
 
 builder.Services.AddAuthentication(options =>
 {
@@ -26,7 +38,7 @@ builder.Services.AddAuthentication(options =>
     options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
     options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
 })
-.AddJwtBearer(async x =>
+.AddJwtBearer( x =>
 {
     var secret = builder.Configuration.GetValue<string>("Secret");
     var key = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(secret));
@@ -43,46 +55,54 @@ builder.Services.AddAuthentication(options =>
     };
 });
 
+//var jwtSection = builder.Configuration.GetValue<string>("JwtBearerTokenSettings");
+//builder.Services.Configure<JwtBearerTokenSettings>(jwtSection);
+//var jwtBearerTokenSettings = jwtSection.Get<JwtBearerTokenSettings>();
+//var key = Encoding.ASCII.GetBytes(jwtSection.SecretKey);
+
+/*var secret = builder.Configuration.GetValue<string>("Secret");
+var key = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(secret));
+
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+})
+.AddJwtBearer(options =>
+{
+    options.RequireHttpsMetadata = false;
+    options.SaveToken = true;
+    options.TokenValidationParameters = new TokenValidationParameters()
+    {
+        ValidateIssuer = true,
+        //ValidIssuer = jwtBearerTokenSettings.Issuer,
+        ValidIssuer = "https://localhost:7051/",
+        ValidateAudience = true,
+        //ValidAudience = jwtBearerTokenSettings.Audience,
+        ValidAudience = "https://localhost:7051/",
+        ValidateIssuerSigningKey = true,
+        //IssuerSigningKey = new SymmetricSecurityKey(key),
+        IssuerSigningKey = key,
+        ValidateLifetime = true,
+        ClockSkew = TimeSpan.Zero
+    };
+});*/
 
 
-    builder.Services.AddCors(options =>
+
+builder.Services.AddCors(options =>
     {
         options.AddPolicy(name: "client",
             policy => policy.WithOrigins("http://localhost:3000")
                    .AllowAnyMethod()
                    .AllowAnyHeader());
     });
-    builder.Services.AddSwaggerGen(c =>
-    {
-        c.SwaggerDoc("v1", new OpenApiInfo { Title = "PetForPet.Api", Version = "v1" });
 
-        c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+    builder.Services.AddSwaggerGen(options => {
+        options.SwaggerDoc("v1", new OpenApiInfo
         {
-            Description = @"JWT Authorization header using the Bearer scheme. \r\n\r\n
-                      Enter 'Bearer' [space] and then your token in the text input below.
-                      \r\n\r\nExample: 'Bearer 12345abcdef'",
-            Name = "Authorization",
-            In = ParameterLocation.Header,
-            Type = SecuritySchemeType.ApiKey,
-            Scheme = "Bearer"
-        });
-
-        c.AddSecurityRequirement(new OpenApiSecurityRequirement()
-        {
-        {
-            new OpenApiSecurityScheme
-            {
-                Reference = new OpenApiReference
-                {
-                    Type = ReferenceType.SecurityScheme,
-                    Id = "Bearer"
-                },
-                Scheme = "oauth2",
-                Name = "Bearer",
-                In = ParameterLocation.Header
-            },
-            new List<string>()
-        }
+            Title = "SuShI",
+            Version = "v1"
         });
     });
 
@@ -98,37 +118,51 @@ builder.Services.AddAuthentication(options =>
     if (app.Environment.IsDevelopment())
     {
         app.UseSwagger();
-        app.UseSwaggerUI();
+        app.UseSwaggerUI(c => {
+            c.SwaggerEndpoint("/swagger/v1/swagger.json", "WEB API");
+            c.DocumentTitle = "SuShI";
+            c.DocExpansion(DocExpansion.List);
+        });
     }
 
 
 
+    app.UseHttpsRedirection();
+
+    app.UseRouting();
 
     app.UseCors("client");
-
-    app.UseHttpsRedirection();
 
     app.UseAuthorization();
 
     app.UseAuthentication();
 
-    app.MapControllers();
-
-    using (var scope = app.Services.CreateScope())
-    using (var userManager = scope.ServiceProvider.GetRequiredService<UserManager<IdentityUser>>())
-    using (var db = scope.ServiceProvider.GetRequiredService<EFDataContext>())
+    app.UseEndpoints(endpoints =>
     {
-        db.Database.Migrate();
-        var user = await userManager.FindByNameAsync(Consts.UserName);
+        endpoints.MapControllers();
+    });
 
-        if (user == null)
-        {
-            user = new IdentityUser(Consts.UserName);
-            await userManager.CreateAsync(user, Consts.Password);
-        }
+    app.UseStaticFiles(new StaticFileOptions
+    {
+        FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "Photos")),
+        RequestPath = "/Photos"
+    });
+
+using (var scope = app.Services.CreateScope())
+using (var userManager = scope.ServiceProvider.GetRequiredService<UserManager<IdentityUser>>())
+using (var db = scope.ServiceProvider.GetRequiredService<EFDataContext>())
+{
+    db.Database.Migrate();
+    var user = await userManager.FindByNameAsync(Consts.UserName);
+
+    if (user == null)
+    {
+        user = new IdentityUser(Consts.UserName);
+        await userManager.CreateAsync(user, Consts.Password);
     }
+}
 
 
 
-    app.Run();
+app.Run();
 
