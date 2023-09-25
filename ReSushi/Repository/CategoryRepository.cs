@@ -3,7 +3,7 @@ using ReSushi.Models;
 
 namespace ReSushi.Repository
 {
-    public class CategoryRepository:ICategoryRepository
+    public class CategoryRepository : ICategoryRepository
     {
         private readonly EFDataContext _efDataContext;
         public CategoryRepository(EFDataContext context) 
