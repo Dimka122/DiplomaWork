@@ -16,13 +16,15 @@ function UpdateProduct() {
     const { id } = useParams();
    
     useEffect(() => {
-      axios.get(`https://localhost:7051/api/Products/{id}`).then((response) => {
+      axios.get(`https://localhost:7051/api/Products/${id}`).then((response) => {
+        //id:id;
         Name.current.value = response.data.Name;
         category.current.value = response.data.category;
         detail.current.value = response.data.detail;
         imgUrl.current.value = response.data.imageUrl;
+        
       });
-    }, []);
+    }, [id]);
    
     function updateProductHandler() {
       var payload = {
@@ -33,7 +35,7 @@ function UpdateProduct() {
         id: id,
       };
       axios
-        .put(`https://localhost:7051/api/Products/`, payload)
+        .put('https://localhost:7051/api/Products/', payload)
         .then((response) => {
           navigate("/");
         });
@@ -43,6 +45,7 @@ function UpdateProduct() {
       <>
       <legend>Update Products</legend>
       <form>
+      
         <Form.Group className="mb-3" controlId="formName">
           <Form.Label>Name</Form.Label>
           <Form.Control type="text" ref={Name} />

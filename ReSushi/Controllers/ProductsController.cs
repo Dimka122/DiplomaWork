@@ -28,7 +28,7 @@ namespace SushiStore.Controllers
             return Ok(await _productRepository.GetProducts());
         }
         [HttpGet]
-        [Route("{Id}")]
+        [Route("{Id:int}")]
         public async Task<IActionResult> GetEmpByID(int Id)
         {
             return Ok(await _productRepository.GetProductByID(Id));
@@ -45,15 +45,19 @@ namespace SushiStore.Controllers
             return Ok("Added Successfully");
         }
         [HttpPut]
-        [Route("UpdateProduct")]
+        //[Route("UpdateProduct")]
         
         public async Task<IActionResult> Put(Product prod)
         {
-            await _productRepository.UpdateProduct(prod);
+             await _productRepository.UpdateProduct(prod);
             return Ok("Updated Successfully");
+
+           // _productRepository.UpdateProduct(prod);
+            //await _productRepository.SaveChangesAsync();
+           // return Ok(prod);
         }
         [HttpDelete]
-        [Route("{Id}")]
+        [Route("{Id:int}")]
         //[HttpDelete("{id}")]
         public JsonResult Delete(int Id)
         {
