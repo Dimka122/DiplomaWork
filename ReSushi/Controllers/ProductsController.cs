@@ -28,7 +28,7 @@ namespace SushiStore.Controllers
             return Ok(await _productRepository.GetProducts());
         }
         [HttpGet]
-        [Route("GetProductByID/{Id}")]
+        [Route("{Id}")]
         public async Task<IActionResult> GetEmpByID(int Id)
         {
             return Ok(await _productRepository.GetProductByID(Id));
@@ -38,7 +38,7 @@ namespace SushiStore.Controllers
         public async Task<IActionResult> Post(Product prod)
         {
             var result = await _productRepository.InsertProduct(prod);
-            if (result.idProduct == 0)
+            if (result.Id == 0)
             {
                 return StatusCode(StatusCodes.Status500InternalServerError, "Something Went Wrong");
             }
@@ -46,17 +46,18 @@ namespace SushiStore.Controllers
         }
         [HttpPut]
         [Route("UpdateProduct")]
+        
         public async Task<IActionResult> Put(Product prod)
         {
             await _productRepository.UpdateProduct(prod);
             return Ok("Updated Successfully");
         }
         [HttpDelete]
-        [Route("DeleteProduct")]
+        [Route("{Id}")]
         //[HttpDelete("{id}")]
-        public JsonResult Delete(int id)
+        public JsonResult Delete(int Id)
         {
-            var result = _productRepository.DeleteProduct(id);
+            var result = _productRepository.DeleteProduct(Id);
             return new JsonResult("Deleted Successfully");
         }
 
