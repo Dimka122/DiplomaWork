@@ -22,8 +22,8 @@ IConfigurationRoot _confString = new ConfigurationBuilder().
 builder.Services.AddDbContext<EFDataContext>(options =>
                options.UseSqlServer(_confString.GetConnectionString("DefaultConnection")));
 
-builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
-.AddEntityFrameworkStores<EFDataContext>();
+//builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
+//.AddEntityFrameworkStores<EFDataContext>();
 
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 builder.Services.AddScoped<IProductRepository, ProductRepository>();

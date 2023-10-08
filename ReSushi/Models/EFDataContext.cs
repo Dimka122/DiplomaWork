@@ -27,7 +27,9 @@ namespace ReSushi.Models
         //}
         public DbSet<Product> Products { get; set; }
         public DbSet<Category> Categories { get; set; }
-        //base.OnModelCreating(builder);
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderLine> OrderLines { get; set; }
+
 
     }
 }
