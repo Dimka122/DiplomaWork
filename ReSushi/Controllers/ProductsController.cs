@@ -46,7 +46,7 @@ namespace SushiStore.Controllers
             return Ok("Added Successfully");
         }
         [HttpPut]
-        //[Route("UpdateProduct")]
+        [Route("UpdateProduct")]
         
         public async Task<IActionResult> Put(Product prod)
         {

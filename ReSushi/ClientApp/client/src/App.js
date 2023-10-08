@@ -21,7 +21,7 @@ function App() {
       </Routes>
       <Routes>
         <Route
-          path="/UpdateProduct/:id"
+          path="/UpdateProduct"
           element={<UpdateProduct />}
         />
       </Routes>

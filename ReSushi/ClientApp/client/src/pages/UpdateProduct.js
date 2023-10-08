@@ -35,7 +35,7 @@ function UpdateProduct() {
         id: id,
       };
       axios
-        .put('https://localhost:7051/api/Products/', payload)
+        .put('https://localhost:7051/api/Products/UpdateProduct', payload)
         .then((response) => {
           navigate("/");
         });
