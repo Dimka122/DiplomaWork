@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using ReSushi.Models;
 using ReSushi.Repository;
 
@@ -6,6 +7,7 @@ namespace ReSushi.Controllers
 {
     namespace SushiStore.Controllers
     {
+        [Authorize]
         [ApiController]
         [Route("api/[controller]")]
         public class CategoriesController : ControllerBase
@@ -34,7 +36,7 @@ namespace ReSushi.Controllers
             public async Task<IActionResult> Post(Category cat)
             {
                 var result = await _categoryRepository.InsertCategory(cat);
-                if (result.idCategory == 0)
+                if (result.Id == 0)
                 {
                     return StatusCode(StatusCodes.Status500InternalServerError, "Something Went Wrong");
                 }

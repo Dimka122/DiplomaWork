@@ -27,12 +27,33 @@ builder.Services.AddDbContext<EFDataContext>(options =>
 
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
+builder.Services.AddScoped<IOrderRepository, OrderRepository>();
+builder.Services.AddScoped<IAppAuthService, AppAuthService>();
 
 //builder.Services.AddIdentity<IdentityUser, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = true)
 //.AddEntityFrameworkStores<EFDataContext>();
 
+builder.Services.AddAuthentication(x =>
+{
+    x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+}).AddJwtBearer(o =>
+{
+    var Key = Encoding.UTF8.GetBytes(builder.Configuration["JWT:Key"]);
+    o.SaveToken = true;
+    o.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuer = false,
+        ValidateAudience = false,
+        ValidateLifetime = true,
+        ValidateIssuerSigningKey = true,
+        ValidIssuer = builder.Configuration["JWT:Issuer"],
+        ValidAudience = builder.Configuration["JWT:Audience"],
+        IssuerSigningKey = new SymmetricSecurityKey(Key)
+    };
+});
 
-builder.Services.AddAuthentication(options =>
+/*builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
     options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -53,7 +74,7 @@ builder.Services.AddAuthentication(options =>
         ValidateLifetime = true,
         ClockSkew = TimeSpan.Zero
     };
-});
+});*/
 
 //var jwtSection = builder.Configuration.GetValue<string>("JwtBearerTokenSettings");
 //builder.Services.Configure<JwtBearerTokenSettings>(jwtSection);
@@ -148,19 +169,19 @@ builder.Services.AddCors(options =>
         RequestPath = "/Photos"
     });
 
-using (var scope = app.Services.CreateScope())
+/*using (var scope = app.Services.CreateScope())
 using (var userManager = scope.ServiceProvider.GetRequiredService<UserManager<IdentityUser>>())
 using (var db = scope.ServiceProvider.GetRequiredService<EFDataContext>())
 {
     db.Database.Migrate();
-    var user = await userManager.FindByNameAsync(Consts.UserName);
+    var user = await userManager.FindByNameAsync(TestUsers.UserName);
 
     if (user == null)
     {
         user = new IdentityUser(Consts.UserName);
         await userManager.CreateAsync(user, Consts.Password);
     }
-}
+}*/
 
 
 
