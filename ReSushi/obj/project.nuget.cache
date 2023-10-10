@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "JUTA5xqV4m2USOptbqngmBUTiFdfMZL/hf62u1T5W/6IP/yp2Jx5qcCU9ej9xKxa3RSraznE+rXW06kG/gOhuQ==",
+  "dgSpecHash": "Hb2exCxlrKiXT+vIZ038UordfstvaFD/iCmxpUhMSXnffnJWkdh7SuAVSl7iQs03nuDUx4uYI8OBQHyhFkcJ+Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\Дима\\source\\repos\\DiplomaWork\\ReSushi\\ReSushi.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Дима\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\Дима\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Дима\\.nuget\\packages\\microsoft.aspnet.cors\\5.2.9\\microsoft.aspnet.cors.5.2.9.nupkg.sha512",
     "C:\\Users\\Дима\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.9\\microsoft.aspnet.webapi.client.5.2.9.nupkg.sha512",

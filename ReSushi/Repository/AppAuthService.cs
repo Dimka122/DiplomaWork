@@ -13,7 +13,6 @@ namespace ReSushi.Repository
         Dictionary<string, string> TestUsers = new Dictionary<string, string>
         {
             { "test_user_1","password@123"}
-           
         };
 
         public AppAuthService(IConfiguration configuration)
