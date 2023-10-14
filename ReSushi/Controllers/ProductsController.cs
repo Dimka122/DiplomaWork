@@ -7,6 +7,7 @@ using System.IO;
 
 namespace SushiStore.Controllers
 {
+    //[Authorize()]
     [ApiController]
     [Route("api/[controller]")]
     public class ProductsController : ControllerBase
@@ -22,6 +23,7 @@ namespace SushiStore.Controllers
             _categoryRepository = categoryRepository??
                 throw new ArgumentNullException(nameof(categoryRepository));
         }
+        
         [HttpGet]
         [Route("GetProducts")]
         public async Task<IActionResult> Get()

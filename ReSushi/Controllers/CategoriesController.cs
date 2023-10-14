@@ -7,7 +7,7 @@ namespace ReSushi.Controllers
 {
     namespace SushiStore.Controllers
     {
-        [Authorize]
+       
         [ApiController]
         [Route("api/[controller]")]
         public class CategoriesController : ControllerBase

@@ -85,3 +85,4 @@ C:\Users\Дима\source\repos\DiplomaWork\ReSushi\obj\Debug\net6.0\refint\ReSus
 C:\Users\Дима\source\repos\DiplomaWork\ReSushi\obj\Debug\net6.0\ReSushi.pdb
 C:\Users\Дима\source\repos\DiplomaWork\ReSushi\obj\Debug\net6.0\ReSushi.genruntimeconfig.cache
 C:\Users\Дима\source\repos\DiplomaWork\ReSushi\obj\Debug\net6.0\ref\ReSushi.dll
+C:\Users\Дима\source\repos\DiplomaWork\ReSushi\bin\Debug\net6.0\BCrypt.Net-Next.dll

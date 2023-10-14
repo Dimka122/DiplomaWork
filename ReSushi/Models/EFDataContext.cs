@@ -9,8 +9,8 @@ namespace ReSushi.Models
     {
         public EFDataContext(DbContextOptions<EFDataContext> options)
               : base(options) { }
-        protected override void OnModelCreating(ModelBuilder builder)
-        {
+        //protected override void OnModelCreating(ModelBuilder builder)
+        //{
         //    //config primary key(product,category)
         //    builder.Entity<Product>().HasKey(s => s.idProduct);
         //    builder.Entity<Category>().HasKey(s => s.idCategory);
@@ -22,14 +22,14 @@ namespace ReSushi.Models
         //        .HasForeignKey(a => a.idCategory)
         //        .OnDelete(DeleteBehavior.Restrict);
 
-            base.OnModelCreating(builder);
+            //base.OnModelCreating(builder);
 
-        }
+        //}
         public DbSet<Product> Products { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderLine> OrderLines { get; set; }
 
-        public DbSet<User> Users { get; set; }
+        //public DbSet<User> Users { get; set; }
     }
 }

@@ -5,7 +5,8 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/Button";
-import DeleteConfirmation from "../components/shared/DeleteConfirmation";
+import DeleteConfirmation from "../components/shared/shared/DeleteConfirmation";
+//import jwtInterceptor from "../components/shared/shared/jwtInterceptor";
  
 function AllProduct() {
   const [products, setProducts] = useState([]);
@@ -15,7 +16,9 @@ function AllProduct() {
   const [itemToDeleteId, setItemToDeleteId] = useState(0);
  
   useEffect(() => {
-    axios.get("https://localhost:7051/api/Products/GetProducts").then((response) => {
+    //jwtInterceptor
+    axios
+    .get("https://localhost:7051/api/Products/GetProducts").then((response) => {
       setProducts((data) => {
         return response.data;
       });

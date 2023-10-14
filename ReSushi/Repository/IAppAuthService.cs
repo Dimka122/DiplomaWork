@@ -5,7 +5,7 @@ namespace ReSushi.Repository
     public interface IAppAuthService
     {
         Task<Token> Authenticate(User user);
-        Task<RegistrationResult> Register(User user);
+        //Task<RegistrationResult> Register(User user);
     }
     public class RegistrationResult
     {
