@@ -19,7 +19,7 @@ const Layout = ({children}) => {
         <Navbar.Collapse id="responsive-navbar-nav">
         <Nav>
             {user && (
-              <Nav.Link as={Link} to="/AllProduct">
+              <Nav.Link as={Link} to="/">
                 Fav-Products
               </Nav.Link>
             )}

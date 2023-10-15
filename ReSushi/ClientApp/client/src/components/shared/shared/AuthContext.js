@@ -7,11 +7,11 @@ const AuthContext = createContext();
  
 export const AuthContextProvider = ({ children }) => {
   const [user, setUser] = useState(() => {
-    if (localStorage.getItem("tokens")) {
-      let tokens = JSON.parse(localStorage.getItem("tokens"));
-      return jwt_decode(tokens.access_token);
-    }
-    return null;
+    //if (localStorage.getItem("tokens")) {
+      //let tokens = JSON.parse(localStorage.getItem("tokens"));
+      //return jwt_decode(tokens.access_token);
+    //}
+    //return null;
   });
  
   const navigate = useNavigate();
@@ -20,6 +20,7 @@ export const AuthContextProvider = ({ children }) => {
     const apiResponse = await axios.post(
       "http://localhost:4000/auth/login",
       //"http://localhost:7051/api/Products",
+      //"https://localhost:7051/api/Users/authenticate",
       
       payload
     );

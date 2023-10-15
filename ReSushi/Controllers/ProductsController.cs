@@ -7,7 +7,7 @@ using System.IO;
 
 namespace SushiStore.Controllers
 {
-    //[Authorize()]
+    //[Authorize]
     [ApiController]
     [Route("api/[controller]")]
     public class ProductsController : ControllerBase
