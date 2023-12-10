@@ -32,7 +32,7 @@ function UpdateProduct() {
       category: category.current.value,
       detail: detail.current.value,
       imageUrl: imgUrl.current.value,
-        id: id,
+       // id: id.current.value,
       };
       axios
         .put('https://localhost:7051/api/Products/UpdateProduct', payload)
@@ -45,7 +45,10 @@ function UpdateProduct() {
       <>
       <legend>Update Products</legend>
       <form>
-      
+      <Form.Group className="mb-3" controlId="formName">
+          <Form.Label>Id</Form.Label>
+          <Form.Control type="int" ref={id} />
+        </Form.Group>
         <Form.Group className="mb-3" controlId="formName">
           <Form.Label>Name</Form.Label>
           <Form.Control type="text" ref={Name} />

@@ -41,10 +41,10 @@ namespace SushiStore.Controllers
         public async Task<IActionResult> Post(Product prod)
         {
             var result = await _productRepository.InsertProduct(prod);
-            if (result.Id == 0)
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError, "Something Went Wrong");
-            }
+            //if (result.Id == 0)
+            //{
+            //    return StatusCode(StatusCodes.Status500InternalServerError, "Something Went Wrong");
+            //}
             return Ok("Added Successfully");
         }
         [HttpPut]
