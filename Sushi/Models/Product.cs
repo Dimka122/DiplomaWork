@@ -10,11 +10,8 @@
 
         public string Description { get; set; }
 
-        // Навигационные свойства для определения отношений с категориями
-        public virtual ICollection<Category> Categories { get; set; }
-
-        // Навигационные свойства для определения отношений с элементами корзины
-        public virtual ICollection<CartItem> CartItems { get; set; }
+        public int CategoryId { get; set; }
+        public virtual Category Category { get; set; }
     }
 
 }
