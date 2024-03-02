@@ -11,17 +11,11 @@ namespace Sushi.Models
 
         public VDbContext(DbContextOptions<VDbContext> options) : base(options) { }
 
-        // Дополнительная конфигурация моделей, если необходимо
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            // Пример конфигурации внешнего ключа для связи продуктов и категорий
-            modelBuilder.Entity<Product>()
-                .HasMany(p => p.Categories)
-                .WithMany(c => c.Products)
-                .UsingEntity(j => j.ToTable("ProductCategory"));
-
-            // Другие настройки моделей, если необходимо
-            base.OnModelCreating(modelBuilder);
-        }
+        //// Дополнительная конфигурация моделей, если необходимо
+        //protected override void OnModelCreating(ModelBuilder modelBuilder)
+        //{
+        //    // Другие настройки моделей, если необходимо
+        //    base.OnModelCreating(modelBuilder);
+        //}
     }
 }
