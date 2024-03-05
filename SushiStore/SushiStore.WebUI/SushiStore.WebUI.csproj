@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Moq" Version="4.1.1309.1617" />
     <PackageReference Include="Ninject" Version="3.0.1.10" />
     <PackageReference Include="Ninject.MVC3" Version="3.0.0.6" />
     <PackageReference Include="Ninject.Web.Common" Version="3.0.0.7" />

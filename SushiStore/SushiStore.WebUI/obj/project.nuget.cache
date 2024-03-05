@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "n3HPmf/5BVJxi6k4QnVIZUql2ImuV/7BHs5z//WdV55Z0Np3QwpxLNNNwTIxensd7M2ksRHFDEM95O0L9c7QYg==",
+  "dgSpecHash": "9iykSi93S2t3sL0BhsedGmo2Yd3Mm2w0YxPEoBIT3oRv7VuEl66FQofj84Vja474zWk1XMT29INJ82yeiap5wg==",
   "success": true,
   "projectFilePath": "C:\\Users\\user\\source\\repos\\DiplomaWork\\SushiStore\\SushiStore.WebUI\\SushiStore.WebUI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\microsoft.web.infrastructure\\1.0.0\\microsoft.web.infrastructure.1.0.0.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\moq\\4.1.1309.1617\\moq.4.1.1309.1617.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\ninject\\3.0.1.10\\ninject.3.0.1.10.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\ninject.mvc3\\3.0.0.6\\ninject.mvc3.3.0.0.6.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\ninject.web.common\\3.0.0.7\\ninject.web.common.3.0.0.7.nupkg.sha512",
@@ -17,6 +18,16 @@
       "warningLevel": 1,
       "message": "Пакет \"Microsoft.Web.Infrastructure 1.0.0\" был восстановлен с помощью \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\", а не целевой платформы проекта \"net8.0\". Этот пакет может быть не полностью совместим с вашим проектом.",
       "libraryId": "Microsoft.Web.Infrastructure",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Пакет \"Moq 4.1.1309.1617\" был восстановлен с помощью \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\", а не целевой платформы проекта \"net8.0\". Этот пакет может быть не полностью совместим с вашим проектом.",
+      "libraryId": "Moq",
       "targetGraphs": [
         "net8.0"
       ]
