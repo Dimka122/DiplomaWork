@@ -3,31 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34601.278
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SushiStore.Domain", "SushiStore.Domain\SushiStore.Domain.csproj", "{CD278341-B4AA-461E-BAFE-42E34BD66724}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SushiStore.WebUI", "SushiStore.WebUI\SushiStore.WebUI.csproj", "{9696EAB3-25E3-4E83-B2DC-595A6E859F0C}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SushiStore.UnitTests", "SushiStore.UnitTests\SushiStore.UnitTests.csproj", "{74F52A1E-106C-4694-8BF5-506B4BEA6D30}"
-EndProject
 Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{CD278341-B4AA-461E-BAFE-42E34BD66724}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CD278341-B4AA-461E-BAFE-42E34BD66724}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CD278341-B4AA-461E-BAFE-42E34BD66724}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CD278341-B4AA-461E-BAFE-42E34BD66724}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9696EAB3-25E3-4E83-B2DC-595A6E859F0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9696EAB3-25E3-4E83-B2DC-595A6E859F0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9696EAB3-25E3-4E83-B2DC-595A6E859F0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9696EAB3-25E3-4E83-B2DC-595A6E859F0C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{74F52A1E-106C-4694-8BF5-506B4BEA6D30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{74F52A1E-106C-4694-8BF5-506B4BEA6D30}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{74F52A1E-106C-4694-8BF5-506B4BEA6D30}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{74F52A1E-106C-4694-8BF5-506B4BEA6D30}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection

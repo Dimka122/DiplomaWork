@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SushiStore.WebUI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+62001842f4d7404023fdac0db138aa9839a68d9c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8ef6c53264d16b545dc41d731ebb9dffc76e9825")]
 [assembly: System.Reflection.AssemblyProductAttribute("SushiStore.WebUI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SushiStore.WebUI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

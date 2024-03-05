@@ -7,3 +7,10 @@ namespace SushiStore.WebUI.Models
         public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
     }
 }
+
+namespace SushiStore
+{
+    public class WebUI
+    {
+    }
+}
