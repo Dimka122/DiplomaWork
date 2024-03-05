@@ -9,6 +9,7 @@ using System.Configuration;
 
 using SushiStore.Domain.Abstract;
 using SushiStore.Domain.Entities;
+using SushiStore.Domain.Concrete;
 
 namespace SushiStore.WebUI.Infrastructure
 {
@@ -34,13 +35,7 @@ namespace SushiStore.WebUI.Infrastructure
 
         private void AddBindings()
         {
-            Mock<ISushiRepository> mock = new Mock<ISushiRepository>();
-            mock.Setup(m => m.Sushis).Returns(new List<Sushi> {
-                new Sushi { Name = "Filadelfia", Price = 1499 },
-                new Sushi { Name = "SimCity", Price = 1299 },
-                new Sushi { Name = "Mexico", Price = 1099 }
-                });
-            kernel.Bind<ISushiRepository>().ToConstant(mock.Object);
+            kernel.Bind<ISushiRepository>().To<EFSushiRepository>();
         }
     }
 }
