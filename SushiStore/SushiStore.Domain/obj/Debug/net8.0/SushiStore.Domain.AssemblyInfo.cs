@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SushiStore.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+62001842f4d7404023fdac0db138aa9839a68d9c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b09d485708839d016882016ea7d47336a2fd3da7")]
 [assembly: System.Reflection.AssemblyProductAttribute("SushiStore.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SushiStore.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
