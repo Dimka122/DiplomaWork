@@ -90,3 +90,8 @@ C:\Users\user\source\repos\DiplomaWork\SushiStore\SushiStore.WebUI\obj\Debug\Sus
 C:\Users\user\source\repos\DiplomaWork\SushiStore\SushiStore.WebUI\obj\Debug\SushiSto.55C5F787.Up2Date
 C:\Users\user\source\repos\DiplomaWork\SushiStore\SushiStore.WebUI\obj\Debug\SushiStore.WebUI.dll
 C:\Users\user\source\repos\DiplomaWork\SushiStore\SushiStore.WebUI\obj\Debug\SushiStore.WebUI.pdb
+C:\Users\user\source\repos\DiplomaWork\SushiStore\SushiStore.WebUI\bin\EntityFramework.dll
+C:\Users\user\source\repos\DiplomaWork\SushiStore\SushiStore.WebUI\bin\EntityFramework.SqlServer.dll
+C:\Users\user\source\repos\DiplomaWork\SushiStore\SushiStore.WebUI\bin\SushiStore.Domain.dll.config
+C:\Users\user\source\repos\DiplomaWork\SushiStore\SushiStore.WebUI\bin\EntityFramework.xml
+C:\Users\user\source\repos\DiplomaWork\SushiStore\SushiStore.WebUI\bin\EntityFramework.SqlServer.xml
