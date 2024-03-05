@@ -3,12 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\user\\source\\repos\\DiplomaWork\\SushiStore\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6CCCBCEB-F006-43A8-A997-BBF2C01118E3}|SushiStore.WebUI\\SushiStore.WebUI.csproj|c:\\users\\user\\source\\repos\\diplomawork\\sushistore\\sushistore.webui\\app_start\\ninjectwebcommon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6CCCBCEB-F006-43A8-A997-BBF2C01118E3}|SushiStore.WebUI\\SushiStore.WebUI.csproj|solutionrelative:sushistore.webui\\app_start\\ninjectwebcommon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6CCCBCEB-F006-43A8-A997-BBF2C01118E3}|SushiStore.WebUI\\SushiStore.WebUI.csproj|c:\\users\\user\\source\\repos\\diplomawork\\sushistore\\sushistore.webui\\views\\sushi\\list.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6CCCBCEB-F006-43A8-A997-BBF2C01118E3}|SushiStore.WebUI\\SushiStore.WebUI.csproj|solutionrelative:sushistore.webui\\views\\sushi\\list.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CCCBCEB-F006-43A8-A997-BBF2C01118E3}|SushiStore.WebUI\\SushiStore.WebUI.csproj|c:\\users\\user\\source\\repos\\diplomawork\\sushistore\\sushistore.webui\\controllers\\sushicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6CCCBCEB-F006-43A8-A997-BBF2C01118E3}|SushiStore.WebUI\\SushiStore.WebUI.csproj|solutionrelative:sushistore.webui\\controllers\\sushicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6CCCBCEB-F006-43A8-A997-BBF2C01118E3}|SushiStore.WebUI\\SushiStore.WebUI.csproj|c:\\users\\user\\source\\repos\\diplomawork\\sushistore\\sushistore.webui\\infrastructure\\ninjectdependencyresolver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6CCCBCEB-F006-43A8-A997-BBF2C01118E3}|SushiStore.WebUI\\SushiStore.WebUI.csproj|solutionrelative:sushistore.webui\\infrastructure\\ninjectdependencyresolver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F6BF7B6-6C57-47F5-9394-1BEF56D6EC65}|SushiStore.Domain\\SushiStore.Domain.csproj|c:\\users\\user\\source\\repos\\diplomawork\\sushistore\\sushistore.domain\\abstract\\isushirepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1F6BF7B6-6C57-47F5-9394-1BEF56D6EC65}|SushiStore.Domain\\SushiStore.Domain.csproj|solutionrelative:sushistore.domain\\abstract\\isushirepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F6BF7B6-6C57-47F5-9394-1BEF56D6EC65}|SushiStore.Domain\\SushiStore.Domain.csproj|c:\\users\\user\\source\\repos\\diplomawork\\sushistore\\sushistore.domain\\entities\\sushi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1F6BF7B6-6C57-47F5-9394-1BEF56D6EC65}|SushiStore.Domain\\SushiStore.Domain.csproj|solutionrelative:sushistore.domain\\entities\\sushi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CCCBCEB-F006-43A8-A997-BBF2C01118E3}|SushiStore.WebUI\\SushiStore.WebUI.csproj|c:\\users\\user\\source\\repos\\diplomawork\\sushistore\\sushistore.webui\\app_start\\ninjectwebcommon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6CCCBCEB-F006-43A8-A997-BBF2C01118E3}|SushiStore.WebUI\\SushiStore.WebUI.csproj|solutionrelative:sushistore.webui\\app_start\\ninjectwebcommon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DACDF0D7-A371-4A47-A70A-9B579E4D20C6}|SushiStore.UnitTests\\SushiStore.UnitTests.csproj|C:\\Users\\user\\source\\repos\\DiplomaWork\\SushiStore\\sushistore.unittests\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -35,6 +51,62 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "List.cshtml",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\DiplomaWork\\SushiStore\\SushiStore.WebUI\\Views\\Sushi\\List.cshtml",
+              "RelativeDocumentMoniker": "SushiStore.WebUI\\Views\\Sushi\\List.cshtml",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\DiplomaWork\\SushiStore\\SushiStore.WebUI\\Views\\Sushi\\List.cshtml",
+              "RelativeToolTip": "SushiStore.WebUI\\Views\\Sushi\\List.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-05T08:15:24.171Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SushiController.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\DiplomaWork\\SushiStore\\SushiStore.WebUI\\Controllers\\SushiController.cs",
+              "RelativeDocumentMoniker": "SushiStore.WebUI\\Controllers\\SushiController.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\DiplomaWork\\SushiStore\\SushiStore.WebUI\\Controllers\\SushiController.cs",
+              "RelativeToolTip": "SushiStore.WebUI\\Controllers\\SushiController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-05T08:05:04.67Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ISushiRepository.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\DiplomaWork\\SushiStore\\SushiStore.Domain\\Abstract\\ISushiRepository.cs",
+              "RelativeDocumentMoniker": "SushiStore.Domain\\Abstract\\ISushiRepository.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\DiplomaWork\\SushiStore\\SushiStore.Domain\\Abstract\\ISushiRepository.cs",
+              "RelativeToolTip": "SushiStore.Domain\\Abstract\\ISushiRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-05T07:37:19.638Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Sushi.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\DiplomaWork\\SushiStore\\SushiStore.Domain\\Entities\\Sushi.cs",
+              "RelativeDocumentMoniker": "SushiStore.Domain\\Entities\\Sushi.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\DiplomaWork\\SushiStore\\SushiStore.Domain\\Entities\\Sushi.cs",
+              "RelativeToolTip": "SushiStore.Domain\\Entities\\Sushi.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-05T07:20:02.482Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "NinjectWebCommon.cs",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\DiplomaWork\\SushiStore\\SushiStore.WebUI\\App_Start\\NinjectWebCommon.cs",
               "RelativeDocumentMoniker": "SushiStore.WebUI\\App_Start\\NinjectWebCommon.cs",
@@ -47,24 +119,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "NinjectDependencyResolver.cs",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\DiplomaWork\\SushiStore\\SushiStore.WebUI\\Infrastructure\\NinjectDependencyResolver.cs",
               "RelativeDocumentMoniker": "SushiStore.WebUI\\Infrastructure\\NinjectDependencyResolver.cs",
               "ToolTip": "C:\\Users\\user\\source\\repos\\DiplomaWork\\SushiStore\\SushiStore.WebUI\\Infrastructure\\NinjectDependencyResolver.cs",
               "RelativeToolTip": "SushiStore.WebUI\\Infrastructure\\NinjectDependencyResolver.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAbAAAA",
+              "ViewState": "AQIAAB8AAAAAAAAAAAAAACgAAAA3AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-05T07:00:48.214Z",
               "EditorCaption": ""
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "UnitTest1.cs",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\DiplomaWork\\SushiStore\\SushiStore.UnitTests\\UnitTest1.cs",
               "RelativeDocumentMoniker": "SushiStore.UnitTests\\UnitTest1.cs",
