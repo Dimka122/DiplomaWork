@@ -12,6 +12,11 @@ namespace SushiStore.WebUI
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+            routes.MapRoute(
+                name: null,
+                url: "Page{page}",
+                defaults: new { controller = "Sushi", action = "List" }
+            );
 
             routes.MapRoute(
                 name: "Default",
