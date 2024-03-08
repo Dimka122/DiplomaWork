@@ -1,11 +1,11 @@
-﻿@using SushiStore.Domain.Entities
-@model IEnumerable<Sushi>
+﻿@using SushiStore.WebUI.Models
+@model SushisListViewModel
 
 @{
     ViewBag.Title = "Товары";
 }
 
-@foreach (var p in @Model)
+@foreach (var p in @Model.Sushis)
 {
     <div>
         <h3>@p.Name</h3>
