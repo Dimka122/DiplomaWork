@@ -31,7 +31,8 @@ namespace SushiStore.WebUI.Controllers
                 {
                     CurrentPage = page,
                     ItemsPerPage = pageSize,
-                    TotalItems = repository.Sushis.Count()
+                    TotalItems = category == null ? repository.Sushis.Count():
+                    repository.Sushis.Where(sushi=>sushi.Category == category).Count()
                 },
                 CurrentCategory = category
             };
