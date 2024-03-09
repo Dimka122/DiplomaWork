@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SushiStore.Domain.Abstract;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,9 +9,18 @@ namespace SushiStore.WebUI.Controllers
 {
     public class NavController : Controller
     {
-        public string Menu()
+        private ISushiRepository repository;
+        public NavController(ISushiRepository repo)
         {
-            return "Тестируем контроллер Nav";
+            repository = repo;
+        }
+        public PartialViewResult Menu()
+        {
+            IEnumerable<string> categoryes = repository.Sushis
+                .Select(s => s.Category)
+                .Distinct()
+                .OrderBy(x => x);
+            return PartialView(categoryes);
         }
     }
 }
