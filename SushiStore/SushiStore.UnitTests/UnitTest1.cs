@@ -9,6 +9,7 @@ using SushiStore.Domain.Entities;
 using SushiStore.WebUI.Controllers;
 using SushiStore.WebUI.Models;
 using SushiStore.WebUI.HtmlHelpers;
+using SushiStore.Domain.Concrete;
 
 namespace SushiStore.UnitTests
 {
@@ -144,6 +145,28 @@ namespace SushiStore.UnitTests
             Assert.AreEqual(results[0], "Ассорти");
             Assert.AreEqual(results[1], "Суши");
             Assert.AreEqual(results[2], "Ролл");
+        }
+        [TestMethod]
+        public void Indicates_Selected_Category()
+        {
+            // Организация - создание имитированного хранилища
+            Mock<ISushiRepository> mock = new Mock<ISushiRepository>();
+            mock.Setup(m => m.Sushis).Returns(new Sushi[] {
+        new Sushi { SushiId = 1, Name = "Sushi1", Category="Суши"},
+        new Sushi { SushiId = 2, Name = "Sushi2", Category="Ролл"}
+    });
+
+            // Организация - создание контроллера
+            NavController target = new NavController(mock.Object);
+
+            // Организация - определение выбранной категории
+            string categoryToSelect = "Ролл";
+
+            // Действие
+            string result = target.Menu(categoryToSelect).ViewBag.SelectedCategory;
+
+            // Утверждение
+            Assert.AreEqual(categoryToSelect, result);
         }
     }
 

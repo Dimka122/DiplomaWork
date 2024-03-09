@@ -14,8 +14,10 @@ namespace SushiStore.WebUI.Controllers
         {
             repository = repo;
         }
-        public PartialViewResult Menu()
+        public PartialViewResult Menu(string category=null)
         {
+            ViewBag.SelectedCategory = category;
+
             IEnumerable<string> categoryes = repository.Sushis
                 .Select(s => s.Category)
                 .Distinct()
