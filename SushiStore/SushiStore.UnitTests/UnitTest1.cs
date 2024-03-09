@@ -32,7 +32,7 @@ namespace SushiStore.UnitTests
             controller.pageSize = 3;
 
             // Действие (act)
-            SushisListViewModel result = (SushisListViewModel)controller.List(2).Model;
+            SushisListViewModel result = (SushisListViewModel)controller.List(null,2).Model;
 
             // Утверждение (assert)
             List<Sushi> sushis = result.Sushis.ToList();
@@ -86,7 +86,7 @@ namespace SushiStore.UnitTests
 
             // Act
             SushisListViewModel result
-                = (SushisListViewModel)controller.List(2).Model;
+                = (SushisListViewModel)controller.List(null,2).Model;
 
             // Assert
             PagingInfo pageInfo = result.PagingInfo;
@@ -95,5 +95,30 @@ namespace SushiStore.UnitTests
             Assert.AreEqual(pageInfo.TotalItems, 5);
             Assert.AreEqual(pageInfo.TotalPages, 2);
         }
+    }
+    [TestMethod]
+    public void Can_Filter_Sushis()
+    {
+        // Организация (arrange)
+        Mock<ISushiRepository> mock = new Mock<ISushiRepository>();
+        mock.Setup(m => m.Sushis).Returns(new List<Sushi>
+    {
+        new Sushi { SushiId = 1, Name = "Sushi1", Category="Cat1"},
+        new Sushi { SushiId = 2, Name = "Sushi2", Category="Cat2"},
+        new Sushi { SushiId = 3, Name = "Sushi3", Category="Cat1"},
+        new Sushi { SushiId = 4, Name = "Sushi4", Category="Cat2"},
+        new Sushi { SushiId = 5, Name = "Sushi5", Category="Cat3"}
+    });
+        SushiController controller = new SushiController(mock.Object);
+        controller.pageSize = 3;
+
+        // Action
+        List<Sushi> result = ((SushisListViewModel)controller.List("Cat2", 1).Model)
+            .Games.ToList();
+
+        // Assert
+        Assert.AreEqual(result.Count(), 2);
+        Assert.IsTrue(result[0].Name == "Sushi2" && result[0].Category == "Cat2");
+        Assert.IsTrue(result[1].Name == "Sushi4" && result[1].Category == "Cat2");
     }
 }

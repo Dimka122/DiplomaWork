@@ -18,11 +18,13 @@ namespace SushiStore.WebUI.Controllers
         {
             repository = repo;
         }
-        public ViewResult List(int page = 1)
+        public ViewResult List(string category,int page = 1)
         {
             SushisListViewModel model = new SushisListViewModel
             {
-            Sushis = repository.Sushis.OrderBy(Sushi => Sushi.SushiId)
+                Sushis = repository.Sushis
+                .Where(p => category == null || p.Category == category)
+                .OrderBy(Sushi => Sushi.SushiId)
                 .Skip((page - 1) * pageSize)
                 .Take(pageSize),
                 PagingInfo = new PagingInfo
@@ -30,7 +32,8 @@ namespace SushiStore.WebUI.Controllers
                     CurrentPage = page,
                     ItemsPerPage = pageSize,
                     TotalItems = repository.Sushis.Count()
-                }
+                },
+                CurrentCategory = category
             };
             return View(model);
         }

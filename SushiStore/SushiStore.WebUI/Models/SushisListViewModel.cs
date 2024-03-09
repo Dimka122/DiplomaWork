@@ -10,5 +10,6 @@ namespace SushiStore.WebUI.Models
     {
         public IEnumerable<Sushi> Sushis { get; set; }
         public PagingInfo PagingInfo { get; set; }
+        public string CurrentCategory { get; set; }
     }
 }
