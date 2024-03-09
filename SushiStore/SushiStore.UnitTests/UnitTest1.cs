@@ -168,6 +168,34 @@ namespace SushiStore.UnitTests
             // Утверждение
             Assert.AreEqual(categoryToSelect, result);
         }
+        [TestMethod]
+        public void Generate_Category_Specific_Sushi_Count()
+        {
+            /// Организация (arrange)
+            Mock<ISushiRepository> mock = new Mock<ISushiRepository>();
+            mock.Setup(m => m.Sushis).Returns(new List<Sushi>
+    {
+        new Sushi { SushiId = 1, Name = "Sushi1", Category="Cat1"},
+        new Sushi { SushiId = 2, Name = "Sushi2", Category = "Cat2"  },
+        new Sushi { SushiId = 3, Name = "Sushi3", Category = "Cat1" },
+        new Sushi { SushiId = 4, Name = "Sushi4", Category = "Cat2" },
+        new Sushi { SushiId = 5, Name = "Sushi5", Category = "Cat3" }
+    });
+            SushiController controller = new SushiController(mock.Object);
+            controller.pageSize = 3;
+
+            // Действие - тестирование счетчиков товаров для различных категорий
+            int res1 = ((SushisListViewModel)controller.List("Cat1").Model).PagingInfo.TotalItems;
+            int res2 = ((SushisListViewModel)controller.List("Cat2").Model).PagingInfo.TotalItems;
+            int res3 = ((SushisListViewModel)controller.List("Cat3").Model).PagingInfo.TotalItems;
+            int resAll = ((SushisListViewModel)controller.List(null).Model).PagingInfo.TotalItems;
+
+            // Утверждение
+            Assert.AreEqual(res1, 2);
+            Assert.AreEqual(res2, 2);
+            Assert.AreEqual(res3, 1);
+            Assert.AreEqual(resAll, 5);
+        }
     }
 
 }
