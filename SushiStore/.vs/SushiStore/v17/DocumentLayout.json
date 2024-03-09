@@ -66,7 +66,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -75,19 +75,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "SushisListViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\DiplomaWork\\SushiStore\\SushiStore.WebUI\\Models\\SushisListViewModel.cs",
-              "RelativeDocumentMoniker": "SushiStore.WebUI\\Models\\SushisListViewModel.cs",
-              "ToolTip": "C:\\Users\\user\\source\\repos\\DiplomaWork\\SushiStore\\SushiStore.WebUI\\Models\\SushisListViewModel.cs",
-              "RelativeToolTip": "SushiStore.WebUI\\Models\\SushisListViewModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAyAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-08T17:22:17.85Z",
-              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -160,11 +147,24 @@
               "Title": "RouteConfig.cs",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\DiplomaWork\\SushiStore\\SushiStore.WebUI\\App_Start\\RouteConfig.cs",
               "RelativeDocumentMoniker": "SushiStore.WebUI\\App_Start\\RouteConfig.cs",
-              "ToolTip": "C:\\Users\\user\\source\\repos\\DiplomaWork\\SushiStore\\SushiStore.WebUI\\App_Start\\RouteConfig.cs*",
-              "RelativeToolTip": "SushiStore.WebUI\\App_Start\\RouteConfig.cs*",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\DiplomaWork\\SushiStore\\SushiStore.WebUI\\App_Start\\RouteConfig.cs",
+              "RelativeToolTip": "SushiStore.WebUI\\App_Start\\RouteConfig.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAzAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-05T08:36:09.813Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SushisListViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\DiplomaWork\\SushiStore\\SushiStore.WebUI\\Models\\SushisListViewModel.cs",
+              "RelativeDocumentMoniker": "SushiStore.WebUI\\Models\\SushisListViewModel.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\DiplomaWork\\SushiStore\\SushiStore.WebUI\\Models\\SushisListViewModel.cs",
+              "RelativeToolTip": "SushiStore.WebUI\\Models\\SushisListViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-08T17:22:17.85Z",
               "EditorCaption": ""
             },
             {
