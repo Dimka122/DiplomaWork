@@ -75,6 +75,7 @@
     <Compile Include="Abstract\ISushiRepository.cs" />
     <Compile Include="Concrete\EFDbContext.cs" />
     <Compile Include="Concrete\EFSushiRepository.cs" />
+    <Compile Include="Entities\Cart.cs" />
     <Compile Include="Entities\Sushi.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
