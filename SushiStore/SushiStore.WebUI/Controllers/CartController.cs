@@ -1,5 +1,6 @@
 ﻿using SushiStore.Domain.Abstract;
 using SushiStore.Domain.Entities;
+using SushiStore.WebUI.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,15 @@ namespace SushiStore.WebUI.Controllers
         public CartController(ISushiRepository repo)
         {
             repository = repo;
+        }
+
+        public ViewResult Index(string returnUrl)
+        {
+            return View(new CartIndexViewModel
+            {
+                Cart = GetCart(),
+                ReturnUrl = returnUrl
+            });
         }
 
         public RedirectToRouteResult AddToCart(int sushiId, string returnUrl)
@@ -50,5 +60,6 @@ namespace SushiStore.WebUI.Controllers
             }
             return cart;
         }
+
     }
 }
