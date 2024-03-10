@@ -3,8 +3,8 @@ using SushiStore.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-//using SushiStore.Domain.Entities.Cart;
-//using SushiStore.Domain.Entities;
+using static SushiStore.Domain.Entities.Cart;
+
 
 namespace SushiStore.UnitTests
 {

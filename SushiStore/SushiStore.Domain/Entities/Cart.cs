@@ -42,8 +42,8 @@ namespace SushiStore.Domain.Entities
 
         public class CartLine
         {
-            Sushi Sushi { get; set; }
-            public int Quantity { get; set; }
+           public Sushi Sushi { get; set; }
+           public int Quantity { get; set; }
         }
     }
 }
