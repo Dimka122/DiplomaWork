@@ -17,49 +17,40 @@ namespace SushiStore.WebUI.Controllers
             repository = repo;
         }
 
-        public ViewResult Index(string returnUrl)
+        public ViewResult Index(Cart cart,string returnUrl)
         {
             return View(new CartIndexViewModel
             {
-                Cart = GetCart(),
+                Cart = cart,
                 ReturnUrl = returnUrl
             });
         }
 
-        public RedirectToRouteResult AddToCart(int sushiId, string returnUrl)
+        public RedirectToRouteResult AddToCart(Cart cart,int sushiId, string returnUrl)
         {
             Sushi sushi = repository.Sushis
                 .FirstOrDefault(g => g.SushiId == sushiId);
 
             if (sushi != null)
             {
-                GetCart().AddItem(sushi, 1);
+                cart.AddItem(sushi, 1);
             }
             return RedirectToAction("Index", new { returnUrl });
         }
 
-        public RedirectToRouteResult RemoveFromCart(int sushiId, string returnUrl)
+        public RedirectToRouteResult RemoveFromCart(Cart cart, int sushiId, string returnUrl)
         {
             Sushi sushi = repository.Sushis
                 .FirstOrDefault(g => g.SushiId == sushiId);
 
             if (sushi != null)
             {
-                GetCart().RemoveLine(sushi);
+                cart.RemoveLine(sushi);
             }
             return RedirectToAction("Index", new { returnUrl });
         }
 
-        public Cart GetCart()
-        {
-            Cart cart = (Cart)Session["Cart"];
-            if (cart == null)
-            {
-                cart = new Cart();
-                Session["Cart"] = cart;
-            }
-            return cart;
-        }
+        
 
     }
 }
