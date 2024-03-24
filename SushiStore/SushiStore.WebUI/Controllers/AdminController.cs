@@ -21,9 +21,9 @@ namespace SushiStore.WebUI.Controllers
             return View(repository.Sushis);
         }
 
-        public ViewResult Edit(int sushisId)
+        public ViewResult Edit(int sushiId)
         {
-            Sushi sushi= repository.Sushis.FirstOrDefault(s=>s.SushiId==sushisId);
+            Sushi sushi= repository.Sushis.FirstOrDefault(s=>s.SushiId==sushiId);
             return View(sushi);
         }
     }

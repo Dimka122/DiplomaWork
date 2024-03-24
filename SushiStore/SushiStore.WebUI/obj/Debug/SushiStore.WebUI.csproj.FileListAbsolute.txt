@@ -1,3 +1,5 @@
+C:\Users\user\source\repos\DiplomaWork\SushiStore\SushiStore.WebUI\obj\Debug\SushiStore.WebUI.csproj.AssemblyReference.cache
+C:\Users\user\source\repos\DiplomaWork\SushiStore\SushiStore.WebUI\obj\Debug\SushiStore.WebUI.csproj.CoreCompileInputs.cache
 C:\Users\user\source\repos\DiplomaWork\SushiStore\SushiStore.WebUI\bin\SushiStore.WebUI.dll.config
 C:\Users\user\source\repos\DiplomaWork\SushiStore\SushiStore.WebUI\bin\SushiStore.WebUI.dll
 C:\Users\user\source\repos\DiplomaWork\SushiStore\SushiStore.WebUI\bin\SushiStore.WebUI.pdb
@@ -50,6 +52,8 @@ C:\Users\user\source\repos\DiplomaWork\SushiStore\SushiStore.WebUI\bin\roslyn\vb
 C:\Users\user\source\repos\DiplomaWork\SushiStore\SushiStore.WebUI\bin\roslyn\vbc.rsp
 C:\Users\user\source\repos\DiplomaWork\SushiStore\SushiStore.WebUI\bin\roslyn\VBCSCompiler.exe
 C:\Users\user\source\repos\DiplomaWork\SushiStore\SushiStore.WebUI\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\user\source\repos\DiplomaWork\SushiStore\SushiStore.WebUI\bin\EntityFramework.dll
+C:\Users\user\source\repos\DiplomaWork\SushiStore\SushiStore.WebUI\bin\EntityFramework.SqlServer.dll
 C:\Users\user\source\repos\DiplomaWork\SushiStore\SushiStore.WebUI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\user\source\repos\DiplomaWork\SushiStore\SushiStore.WebUI\bin\Microsoft.Web.Infrastructure.dll
 C:\Users\user\source\repos\DiplomaWork\SushiStore\SushiStore.WebUI\bin\Moq.dll
@@ -65,6 +69,9 @@ C:\Users\user\source\repos\DiplomaWork\SushiStore\SushiStore.WebUI\bin\System.We
 C:\Users\user\source\repos\DiplomaWork\SushiStore\SushiStore.WebUI\bin\System.Web.Webpages.Razor.dll
 C:\Users\user\source\repos\DiplomaWork\SushiStore\SushiStore.WebUI\bin\WebActivator.dll
 C:\Users\user\source\repos\DiplomaWork\SushiStore\SushiStore.WebUI\bin\SushiStore.Domain.pdb
+C:\Users\user\source\repos\DiplomaWork\SushiStore\SushiStore.WebUI\bin\SushiStore.Domain.dll.config
+C:\Users\user\source\repos\DiplomaWork\SushiStore\SushiStore.WebUI\bin\EntityFramework.xml
+C:\Users\user\source\repos\DiplomaWork\SushiStore\SushiStore.WebUI\bin\EntityFramework.SqlServer.xml
 C:\Users\user\source\repos\DiplomaWork\SushiStore\SushiStore.WebUI\bin\Moq.xml
 C:\Users\user\source\repos\DiplomaWork\SushiStore\SushiStore.WebUI\bin\Ninject.pdb
 C:\Users\user\source\repos\DiplomaWork\SushiStore\SushiStore.WebUI\bin\Ninject.xml
@@ -85,13 +92,6 @@ C:\Users\user\source\repos\DiplomaWork\SushiStore\SushiStore.WebUI\bin\ru\System
 C:\Users\user\source\repos\DiplomaWork\SushiStore\SushiStore.WebUI\bin\ru\System.Web.Webpages.Razor.resources.dll
 C:\Users\user\source\repos\DiplomaWork\SushiStore\SushiStore.WebUI\bin\ru\System.Web.Helpers.resources.dll
 C:\Users\user\source\repos\DiplomaWork\SushiStore\SushiStore.WebUI\bin\ru\System.Web.Mvc.resources.dll
-C:\Users\user\source\repos\DiplomaWork\SushiStore\SushiStore.WebUI\obj\Debug\SushiStore.WebUI.csproj.AssemblyReference.cache
-C:\Users\user\source\repos\DiplomaWork\SushiStore\SushiStore.WebUI\obj\Debug\SushiStore.WebUI.csproj.CoreCompileInputs.cache
 C:\Users\user\source\repos\DiplomaWork\SushiStore\SushiStore.WebUI\obj\Debug\SushiSto.55C5F787.Up2Date
 C:\Users\user\source\repos\DiplomaWork\SushiStore\SushiStore.WebUI\obj\Debug\SushiStore.WebUI.dll
 C:\Users\user\source\repos\DiplomaWork\SushiStore\SushiStore.WebUI\obj\Debug\SushiStore.WebUI.pdb
-C:\Users\user\source\repos\DiplomaWork\SushiStore\SushiStore.WebUI\bin\EntityFramework.dll
-C:\Users\user\source\repos\DiplomaWork\SushiStore\SushiStore.WebUI\bin\EntityFramework.SqlServer.dll
-C:\Users\user\source\repos\DiplomaWork\SushiStore\SushiStore.WebUI\bin\SushiStore.Domain.dll.config
-C:\Users\user\source\repos\DiplomaWork\SushiStore\SushiStore.WebUI\bin\EntityFramework.xml
-C:\Users\user\source\repos\DiplomaWork\SushiStore\SushiStore.WebUI\bin\EntityFramework.SqlServer.xml

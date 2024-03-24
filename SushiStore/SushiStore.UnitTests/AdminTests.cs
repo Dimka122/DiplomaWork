@@ -39,6 +39,31 @@ namespace SushiStore.UnitTests
             Assert.AreEqual("Sushi3", result[2].Name);
 
         }
+
+        [TestMethod]
+        public void Can_Edit_Sushi()
+        {
+            Mock<ISushiRepository> mock = new Mock<ISushiRepository>();
+            mock.Setup(m => m.Sushis).Returns(new List<Sushi>
+            {
+                new Sushi { SushiId=1,Name="Sushi1"},
+                new Sushi { SushiId=2,Name="Sushi2"},
+                new Sushi { SushiId=3,Name="Sushi3"},
+                new Sushi {SushiId=4,Name="Sushi4"},
+                new Sushi {SushiId=5,Name="Sushi5"}
+            });
+
+            // Организация - создание контроллера
+            AdminController controller = new AdminController(mock.Object);
+
+            Sushi sushi1= controller.Edit(1).ViewData.Model as Sushi;
+            Sushi sushi2 = controller.Edit(2).ViewData.Model as Sushi;
+            Sushi sushi3 = controller.Edit(3).ViewData.Model as Sushi;
+
+            Assert.AreEqual(1, sushi1.SushiId);
+            Assert.AreEqual(2, sushi2.SushiId);
+            Assert.AreEqual(3, sushi3.SushiId);
+        }
         public void Cannot_Edit_Nonexistent_Sushi()
         {
             Mock<ISushiRepository> mock = new Mock<ISushiRepository>();
