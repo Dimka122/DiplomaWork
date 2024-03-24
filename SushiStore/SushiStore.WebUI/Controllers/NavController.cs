@@ -14,7 +14,7 @@ namespace SushiStore.WebUI.Controllers
         {
             repository = repo;
         }
-        public PartialViewResult Menu(string category=null, bool horizontalNav=false)
+        public PartialViewResult Menu(string category=null)
         {
             ViewBag.SelectedCategory = category;
 
@@ -22,8 +22,7 @@ namespace SushiStore.WebUI.Controllers
                 .Select(s => s.Category)
                 .Distinct()
                 .OrderBy(x => x);
-            string viewName = horizontalNav ? "MenuHorizontal" : "Menu";
-            return PartialView(viewName, categoryes);
+            return PartialView("FlexMenu", categoryes);
         }
     }
 }
