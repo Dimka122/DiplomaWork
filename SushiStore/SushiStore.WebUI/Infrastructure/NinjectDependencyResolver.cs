@@ -10,6 +10,8 @@ using System.Configuration;
 using SushiStore.Domain.Abstract;
 using SushiStore.Domain.Entities;
 using SushiStore.Domain.Concrete;
+using SushiStore.WebUI.Infrastructure.Abstract;
+using SushiStore.WebUI.Infrastructure.Concrete;
 
 namespace SushiStore.WebUI.Infrastructure
 {
@@ -44,6 +46,7 @@ namespace SushiStore.WebUI.Infrastructure
 
             kernel.Bind<IOrderProcessor>().To<EmailOrderProcessor>()
                 .WithConstructorArgument("settings", emailSettings);
+            kernel.Bind<IAuthProvider>().To<FormAuthProvider>();
         }
     }
 }
