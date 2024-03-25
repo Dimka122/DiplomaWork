@@ -8,6 +8,7 @@ using System.Web.Mvc;
 
 namespace SushiStore.WebUI.Controllers
 {
+    [Authorize]
     public class AdminController : Controller
     {
         ISushiRepository repository;
