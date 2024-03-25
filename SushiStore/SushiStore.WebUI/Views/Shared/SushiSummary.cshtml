@@ -1,6 +1,14 @@
 ﻿@model SushiStore.Domain.Entities.Sushi
 
 <div class="well">
+    @if (Model.ImageData != null)
+    {
+        <div class="pull-left" style="margin-right: 10px">
+            <img class="img-thumbnail" width="75" height="75"
+                 src="@Url.Action("GetImage", "Sushi",
+                new { Model.SushiId })" />
+        </div>
+    }
 
     <h3>
         <strong>@Model.Name</strong>
