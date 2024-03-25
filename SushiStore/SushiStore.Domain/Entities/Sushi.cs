@@ -14,16 +14,21 @@ namespace SushiStore.Domain.Entities
         public int SushiId { get; set; }
 
         [Display(Name = "Название")]
+        [Required(ErrorMessage = "Пожалуйста, введите название продукта")]
         public string Name { get; set; }
 
         [DataType(DataType.MultilineText)]
         [Display(Name = "Описание")]
+        [Required(ErrorMessage = "Пожалуйста, введите описание продукта")]
         public string Description { get; set; }
 
         [Display(Name = "Категория")]
+        [Required(ErrorMessage = "Пожалуйста, укажите категорию продукта")]
         public string Category { get; set; }
 
         [Display(Name = "Цена (грн.)")]
+        [Required]
+        [Range(0.01, double.MaxValue, ErrorMessage = "Пожалуйста, введите положительное значение для цены")]
         public decimal Price { get; set; }
     }
 }

@@ -4,12 +4,39 @@
     ViewBag.Title = "Админ панель: редактирование товара";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
+<div class="panel">
+    <div class="panel-heading">
+        <h2>Редактирование товара «@Model.Name»</h2>
+        </div>
+        @using (Html.BeginForm())
+        {
+            <div class="panel-body">
+                @Html.HiddenFor(m => m.SushiId)
+                @foreach (var property in ViewData.ModelMetadata.Properties)
+                {
+                    if (property.PropertyName != "SushiId")
+                    {
+                        <div class="form-group">
+                            <label>@(property.DisplayName ?? property.PropertyName)</label>
+                            @if (property.PropertyName == "Description")
+                            {
+                                @Html.TextArea(property.PropertyName, null,
+                                    new { @class = "form-control", rows = 5 })
+                            }
+                            else
+                            {
+                                @Html.TextBox(property.PropertyName, null,
+                                    new { @class = "form-control" })
+                            }
+                        </div>
+                    }
+                }
+            </div>
+            <div class="panel-footer">
+                @Html.EditorForModel()
+                <input type="submit" value="Сохранить" />
+                @Html.ActionLink("Отменить изменения и вернуться к списку", "Index")
+            </div>
 
-<h2>Редактирование товара «@Model.Name»</h2>
-
-@using (Html.BeginForm())
-{
-    @Html.EditorForModel()
-    <input type="submit" value="Сохранить" />
-    @Html.ActionLink("Отменить изменения и вернуться к списку", "Index")
-}
+        }
+    </div>

@@ -10,5 +10,6 @@ namespace SushiStore.Domain.Abstract
     public interface ISushiRepository
     {
         IEnumerable<Sushi>Sushis {  get; }
+        void SaveSushi(Sushi sushi);
     }
 }

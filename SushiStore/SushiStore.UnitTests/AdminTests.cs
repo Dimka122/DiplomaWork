@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Mvc;
 
 namespace SushiStore.UnitTests
 {
@@ -80,6 +81,53 @@ namespace SushiStore.UnitTests
             AdminController controller = new AdminController(mock.Object);
 
             Sushi result=controller.Edit(6).ViewData.Model as Sushi;
+        }
+
+        [TestMethod]
+        public void Can_Save_Valid_Changes()
+        {
+            // Организация - создание имитированного хранилища данных
+            Mock<ISushiRepository> mock = new Mock<ISushiRepository>();
+
+            // Организация - создание контроллера
+            AdminController controller = new AdminController(mock.Object);
+
+            // Организация - создание объекта 
+            Sushi sushi = new Sushi { Name = "Test" };
+
+            // Действие - попытка сохранения товара
+            ActionResult result = controller.Edit(sushi);
+
+            // Утверждение - проверка того, что к хранилищу производится обращение
+            mock.Verify(m => m.SaveSushi(sushi));
+
+            // Утверждение - проверка типа результата метода
+            Assert.IsNotInstanceOfType(result, typeof(ViewResult));
+        }
+
+        [TestMethod]
+        public void Cannot_Save_Invalid_Changes()
+        {
+            // Организация - создание имитированного хранилища данных
+            Mock<ISushiRepository> mock = new Mock<ISushiRepository>();
+
+            // Организация - создание контроллера
+            AdminController controller = new AdminController(mock.Object);
+
+            // Организация - создание объекта 
+            Sushi sushi = new Sushi { Name = "Test" };
+
+            // Организация - добавление ошибки в состояние модели
+            controller.ModelState.AddModelError("error", "error");
+
+            // Действие - попытка сохранения товара
+            ActionResult result = controller.Edit(sushi);
+
+            // Утверждение - проверка того, что обращение к хранилищу НЕ производится 
+            mock.Verify(m => m.SaveSushi(It.IsAny<Sushi>()), Times.Never());
+
+            // Утверждение - проверка типа результата метода
+            Assert.IsInstanceOfType(result, typeof(ViewResult));
         }
     }
 }
