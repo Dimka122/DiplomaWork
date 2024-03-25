@@ -129,5 +129,25 @@ namespace SushiStore.UnitTests
             // Утверждение - проверка типа результата метода
             Assert.IsInstanceOfType(result, typeof(ViewResult));
         }
+
+        [TestMethod]
+        public void Can_Delete_Valid_Sushis()
+        {
+            Sushi sushi = new Sushi { SushiId = 2, Name = "Sushi2" };
+            Mock<ISushiRepository> mock = new Mock<ISushiRepository>();
+            mock.Setup(m => m.Sushis).Returns(new List<Sushi>
+            {
+                new Sushi { SushiId=1,Name="Sushi1"},
+                new Sushi { SushiId=2,Name="Sushi2"},
+                new Sushi { SushiId=3,Name="Sushi3"},
+                new Sushi {SushiId=4,Name="Sushi4"},
+                new Sushi {SushiId=5,Name="Sushi5"}
+            });
+            // Организация - создание контроллера
+            AdminController controller = new AdminController(mock.Object);
+            controller.Delete(sushi.SushiId);
+
+            mock.Verify(m=>m.DeleteSushi(sushi.SushiId));
+        }
     }
 }
