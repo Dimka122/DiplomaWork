@@ -11,5 +11,6 @@ namespace SushiStore.Domain.Abstract
     {
         IEnumerable<Sushi>Sushis {  get; }
         void SaveSushi(Sushi sushi);
+        Sushi DeleteSushi(int sushiId);
     }
 }

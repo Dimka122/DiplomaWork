@@ -1,5 +1,3 @@
-C:\Users\user\source\repos\DiplomaWork\SushiStore\SushiStore.WebUI\obj\Debug\SushiStore.WebUI.csproj.AssemblyReference.cache
-C:\Users\user\source\repos\DiplomaWork\SushiStore\SushiStore.WebUI\obj\Debug\SushiStore.WebUI.csproj.CoreCompileInputs.cache
 C:\Users\user\source\repos\DiplomaWork\SushiStore\SushiStore.WebUI\bin\SushiStore.WebUI.dll.config
 C:\Users\user\source\repos\DiplomaWork\SushiStore\SushiStore.WebUI\bin\SushiStore.WebUI.dll
 C:\Users\user\source\repos\DiplomaWork\SushiStore\SushiStore.WebUI\bin\SushiStore.WebUI.pdb
@@ -92,6 +90,8 @@ C:\Users\user\source\repos\DiplomaWork\SushiStore\SushiStore.WebUI\bin\ru\System
 C:\Users\user\source\repos\DiplomaWork\SushiStore\SushiStore.WebUI\bin\ru\System.Web.Webpages.Razor.resources.dll
 C:\Users\user\source\repos\DiplomaWork\SushiStore\SushiStore.WebUI\bin\ru\System.Web.Helpers.resources.dll
 C:\Users\user\source\repos\DiplomaWork\SushiStore\SushiStore.WebUI\bin\ru\System.Web.Mvc.resources.dll
+C:\Users\user\source\repos\DiplomaWork\SushiStore\SushiStore.WebUI\obj\Debug\SushiStore.WebUI.csproj.AssemblyReference.cache
+C:\Users\user\source\repos\DiplomaWork\SushiStore\SushiStore.WebUI\obj\Debug\SushiStore.WebUI.csproj.CoreCompileInputs.cache
 C:\Users\user\source\repos\DiplomaWork\SushiStore\SushiStore.WebUI\obj\Debug\SushiSto.55C5F787.Up2Date
 C:\Users\user\source\repos\DiplomaWork\SushiStore\SushiStore.WebUI\obj\Debug\SushiStore.WebUI.dll
 C:\Users\user\source\repos\DiplomaWork\SushiStore\SushiStore.WebUI\obj\Debug\SushiStore.WebUI.pdb

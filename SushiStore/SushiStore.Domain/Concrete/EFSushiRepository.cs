@@ -16,6 +16,17 @@ namespace SushiStore.Domain.Concrete
             get {  return context.Sushis; }
         }
 
+        public Sushi DeleteSushi(int sushiId)
+        {
+            Sushi DbEntry=context.Sushis.Find(sushiId);
+            if (DbEntry != null)
+            {
+                context.Sushis.Remove(DbEntry);
+                context.SaveChanges();
+            }
+            return DbEntry;
+        }
+
         public void SaveSushi(Sushi sushi)
         {
             if (sushi.SushiId == 0)

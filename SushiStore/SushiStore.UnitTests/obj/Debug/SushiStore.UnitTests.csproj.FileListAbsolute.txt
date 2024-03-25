@@ -1,2 +1,0 @@
-C:\Users\user\source\repos\DiplomaWork\SushiStore\SushiStore.UnitTests\obj\Debug\SushiStore.UnitTests.csproj.AssemblyReference.cache
-C:\Users\user\source\repos\DiplomaWork\SushiStore\SushiStore.UnitTests\obj\Debug\SushiStore.UnitTests.csproj.CoreCompileInputs.cache

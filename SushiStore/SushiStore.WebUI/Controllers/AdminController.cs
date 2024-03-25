@@ -41,5 +41,22 @@ namespace SushiStore.WebUI.Controllers
                 return View(sushi);
             }
         }
+
+        public ViewResult Create()
+        {
+            return View("Edit",new Sushi());
+        }
+
+        [HttpPost]
+        public ActionResult Delete(int gameId)
+        {
+            Sushi deletedSushi=repository.DeleteSushi(gameId);
+            if (deletedSushi != null)
+            {
+                TempData["message"]=String.Format("продукт \"{0}\" был удален",
+                    deletedSushi.Name);
+            }
+            return RedirectToAction("Index");
+        }
     }
 }
