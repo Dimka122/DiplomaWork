@@ -34,12 +34,15 @@ namespace SushiStore.Domain.Concrete
             else
             {
                 Sushi dbEntry = context.Sushis.Find(sushi.SushiId);
+
                 if (dbEntry != null)
                 {
                     dbEntry.Name = sushi.Name;
                     dbEntry.Description = sushi.Description;
                     dbEntry.Price = sushi.Price;
                     dbEntry.Category = sushi.Category;
+                    dbEntry.ImageData = sushi.ImageData;
+                    dbEntry.ImageMimeType = sushi.ImageMimeType;
                 }
             }
             context.SaveChanges();

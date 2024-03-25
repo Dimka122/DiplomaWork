@@ -38,5 +38,19 @@ namespace SushiStore.WebUI.Controllers
             };
             return View(model);
         }
+        public FileContentResult GetImage(int sushiId)
+        {
+            Sushi sushi = repository.Sushis
+                .FirstOrDefault(g => g.SushiId == sushiId);
+
+            if (sushi != null)
+            {
+                return File(sushi.ImageData, sushi.ImageMimeType);
+            }
+            else
+            {
+                return null;
+            }
+        }
     }
 }

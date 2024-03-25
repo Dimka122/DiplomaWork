@@ -28,11 +28,17 @@ namespace SushiStore.WebUI.Controllers
             return View(sushi);
         }
         [HttpPost]
-        public ActionResult Edit(Sushi sushi)
+        public ActionResult Edit(Sushi sushi, HttpPostedFileBase image = null)
         {
             if (ModelState.IsValid)
             {
-                repository.SaveSushi(sushi);
+                if (image != null)
+                {
+                    sushi.ImageMimeType=image.ContentType;
+                    sushi.ImageData = new byte[image.ContentLength];
+                    image.InputStream.Read(sushi.ImageData, 0, image.ContentLength);
+                }
+                    repository.SaveSushi(sushi);
                 TempData["message"] = string.Format("Изменения в продукте \"{0}\" были сохранены", sushi.Name);
                 return RedirectToAction("Index");
             }
